@@ -826,6 +826,7 @@
 
     <!-- ===================== SLIDE 8 — Réalisations en entreprise ===================== -->
 <!-- ===================== SLIDE 8 — Réalisations en entreprise ===================== -->
+<!-- ===================== SLIDE 8 — Réalisations en entreprise ===================== -->
 <section class="slide"
   style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')"
   aria-label="Réalisations en entreprise">
@@ -834,32 +835,82 @@
       <h1 class="title">Réalisations en entreprise</h1>
     </header>
 
-    <div class="content">
-      <div class="grid grid-2">
+    <!-- IMPORTANT : on force une mise en page verticale propre -->
+    <div class="content" style="flex-direction:column; align-items:stretch; gap:18px;">
 
-        <article class="card">
+      <!-- 2 cartes -->
+      <div class="grid grid-2" style="gap:18px; align-items:stretch;">
+        <!-- Carte 1 -->
+        <article class="card" style="background: rgba(163,194,255,.10); backdrop-filter: blur(6px);">
           <div class="card-header">
             <div class="icon-badge"><span class="material-icons">account_tree</span></div>
-            <h2 class="card-title">Active Directory</h2>
+            <div>
+              <h2 class="card-title" style="margin:0;">Active Directory</h2>
+              <div style="opacity:.90; margin-top:4px;">Gestion de l’environnement / annuaire</div>
+            </div>
           </div>
-          <p>
-            Mise en place et administration d’un <strong>Active Directory</strong>
-            pour une gestion centralisée.
+
+          <div class="tags" style="margin-top:0;">
+            <span class="tag"><span class="material-icons">calendar_today</span> Juillet 2024</span>
+            <span class="tag"><span class="material-icons">people</span> Identités</span>
+            <span class="tag"><span class="material-icons">policy</span> GPO</span>
+          </div>
+
+          <p style="margin:12px 0 0; line-height:1.45;">
+            <strong>Mission :</strong> mise en place et administration d’un Active Directory pour une gestion
+            centralisée des utilisateurs, des postes et des stratégies (GPO).
           </p>
         </article>
 
-        <article class="card">
+        <!-- Carte 2 -->
+        <article class="card" style="background: rgba(163,194,255,.10); backdrop-filter: blur(6px);">
           <div class="card-header">
             <div class="icon-badge"><span class="material-icons">dns</span></div>
-            <h2 class="card-title">Baie informatique</h2>
+            <div>
+              <h2 class="card-title" style="margin:0;">Baie informatique</h2>
+              <div style="opacity:.90; margin-top:4px;">Optimisation de l’infrastructure</div>
+            </div>
           </div>
-          <p>
-            Réorganisation de la baie pour améliorer la <strong>sécurité</strong>
-            et la <strong>lisibilité</strong>.
+
+          <div class="tags" style="margin-top:0;">
+            <span class="tag"><span class="material-icons">calendar_today</span> Septembre 2024</span>
+            <span class="tag"><span class="material-icons">storage</span> Serveurs</span>
+            <span class="tag"><span class="material-icons">security</span> Sécurisation</span>
+          </div>
+
+          <p style="margin:12px 0 0; line-height:1.45;">
+            <strong>Mission :</strong> modernisation / réorganisation de la baie pour améliorer la disponibilité,
+            la lisibilité du câblage et le niveau de sécurité.
           </p>
         </article>
-
       </div>
+
+      <!-- Compétences mobilisées (ne déborde pas) -->
+      <div class="card" style="padding:14px 16px; background: rgba(163,194,255,.08); backdrop-filter: blur(6px);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span class="material-icons" style="color:var(--accent);">psychology</span>
+          <div style="color:var(--accent); font-weight:700; font-size:18px;">Compétences mobilisées</div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(5, minmax(0, 1fr)); gap:10px;">
+          <div class="chip" style="justify-content:center; padding:10px 12px;">
+            <span class="material-icons">account_tree</span> Utilisateurs
+          </div>
+          <div class="chip" style="justify-content:center; padding:10px 12px;">
+            <span class="material-icons">policy</span> GPO
+          </div>
+          <div class="chip" style="justify-content:center; padding:10px 12px;">
+            <span class="material-icons">storage</span> Serveurs
+          </div>
+          <div class="chip" style="justify-content:center; padding:10px 12px;">
+            <span class="material-icons">security</span> Sécurité
+          </div>
+          <div class="chip" style="justify-content:center; padding:10px 12px;">
+            <span class="material-icons">backup</span> Sauvegarde
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <footer class="footer">
@@ -868,6 +919,7 @@
     </footer>
   </div>
 </section>
+
 
 
     <!-- ===================== SLIDE 9 — La veille ===================== -->
