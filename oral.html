@@ -1,113 +1,618 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation Orale BTS SIO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: #ffffff;
-            overflow: hidden;
-        }
-        .slide {
-            width: 1280px;
-            height: 720px;
-            position: relative;
-            background-image: url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg');
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 32, 96, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .content {
-            text-align: center;
-            max-width: 80%;
-        }
-        .title {
-            font-size: 64px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            font-size: 28px;
-            font-weight: 400;
-            color: #a3c2ff;
-            margin-bottom: 40px;
-        }
-        .presenter {
-            font-size: 24px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-top: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(163, 194, 255, 0.1);
-            padding: 15px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .presenter:hover {
-            transform: translateY(-5px);
-            background-color: rgba(163, 194, 255, 0.2);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .presenter i {
-            margin-right: 10px;
-            color: #a3c2ff;
-        }
-        .bts-logo {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            font-size: 18px;
-            color: #a3c2ff;
-            display: flex;
-            align-items: center;
-        }
-        .bts-logo i {
-            margin-right: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Présentation Orale BTS SIO</title>
+
+  <!-- Fonts / Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-navy: rgba(0, 32, 96, 0.86);
+      --accent: #a3c2ff;
+      --text: #ffffff;
+
+      --shadow-sm: 0 4px 10px rgba(0,0,0,.18);
+      --shadow-md: 0 10px 20px rgba(0,0,0,.22);
+
+      --radius: 12px;
+      --pad-x: 70px;
+      --pad-top: 50px;
+      --pad-bottom: 50px;
+
+      --w: 1280px;
+      --h: 720px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: "Source Sans Pro", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: #0b1022;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    /* ===== Deck wrapper ===== */
+    .deck{
+      width: var(--w);
+      height: var(--h);
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      background: #111;
+    }
+
+    /* ===== Slide system ===== */
+    .slide{
+      position: absolute;
+      inset: 0;
+      display: none;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .slide.is-active{ display: block; }
+
+    .overlay{
+      position: absolute;
+      inset: 0;
+      background: var(--bg-navy);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header{
+      padding: var(--pad-top) var(--pad-x) 20px;
+    }
+
+    .title{
+      margin: 0 0 18px;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      display: inline-block;
+      position: relative;
+    }
+    .title::after{
+      content:"";
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 86px;
+      height: 4px;
+      border-radius: 4px;
+      background: var(--accent);
+      opacity: .95;
+    }
+
+    .content{
+      flex: 1;
+      padding: 0 var(--pad-x) var(--pad-bottom);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer{
+      padding: 18px var(--pad-x);
+      font-size: 16px;
+      color: var(--accent);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      opacity: .95;
+    }
+
+    /* ===== Components ===== */
+    .chip{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      background: rgba(163, 194, 255, 0.12);
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+      font-weight: 600;
+    }
+    .chip:hover{
+      transform: translateY(-4px);
+      background: rgba(163, 194, 255, 0.18);
+      box-shadow: var(--shadow-md);
+    }
+    .chip .material-icons{ color: var(--accent); }
+
+    .grid{
+      width: 100%;
+      display: grid;
+      gap: 26px;
+    }
+
+    .grid-2{ grid-template-columns: repeat(2, 1fr); }
+    .grid-3{ grid-template-columns: repeat(3, 1fr); }
+
+    .card{
+      background: rgba(163, 194, 255, 0.11);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+      height: 100%;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      background: rgba(163, 194, 255, 0.18);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid rgba(163, 194, 255, 0.25);
+    }
+
+    .icon-badge{
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(163, 194, 255, 0.18);
+      box-shadow: var(--shadow-sm);
+      flex: 0 0 auto;
+    }
+    .icon-badge .material-icons{
+      color: var(--accent);
+      font-size: 28px;
+    }
+
+    .card-title{
+      margin: 0;
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+      font-size: 18px;
+    }
+    .list li{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.25;
+    }
+    .list .material-icons{
+      color: var(--accent);
+      font-size: 18px;
+      margin-top: 3px;
+      flex: 0 0 auto;
+    }
+    .list strong{ color: var(--accent); font-weight: 700; }
+
+    /* ===== Slide specific ===== */
+    .cover .overlay{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 var(--pad-x);
+    }
+    .cover h1{
+      margin: 0 0 14px;
+      font-size: 66px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .cover h2{
+      margin: 0 0 34px;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--accent);
+      opacity: .95;
+    }
+    .cover .corner{
+      position: absolute;
+      right: 40px;
+      bottom: 34px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      opacity: .95;
+    }
+
+    .toc .content{ align-items: center; }
+    .toc-item{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      background: rgba(163, 194, 255, 0.10);
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .toc-item:hover{
+      transform: translateX(10px);
+      background: rgba(163, 194, 255, 0.16);
+      box-shadow: var(--shadow-md);
+    }
+    .toc-number{
+      min-width: 46px;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .toc-item .material-icons{ color: var(--accent); }
+
+    .profile{
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      width: 100%;
+    }
+    .avatar{
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(163, 194, 255, 0.18);
+      box-shadow: var(--shadow-md);
+      transition: transform .25s ease;
+      flex: 0 0 auto;
+    }
+    .avatar:hover{ transform: scale(1.04); }
+    .avatar .material-icons{ font-size: 96px; color: var(--accent); }
+
+    .profile h2{
+      margin: 0 0 10px;
+      font-size: 38px;
+      font-weight: 800;
+    }
+    .meta{
+      display: grid;
+      gap: 12px;
+      font-size: 20px;
+    }
+    .meta-row{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.2;
+    }
+    .meta-row .material-icons{ color: var(--accent); }
+    .meta-row b{
+      color: var(--accent);
+      min-width: 170px;
+    }
+
+    .callout{
+      margin-top: 26px;
+      width: 100%;
+      background: rgba(163, 194, 255, 0.14);
+      border-left: 4px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .callout h3{
+      margin: 0 0 12px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 700;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(163, 194, 255, 0.25);
+    }
+    .callout-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      font-size: 19px;
+    }
+    .callout-point{
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.25;
+    }
+    .callout-point .material-icons{ color: var(--accent); margin-top: 2px; }
+
+    /* ===== Controls ===== */
+    .controls{
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      display: flex;
+      gap: 10px;
+      z-index: 50;
+    }
+    .btn{
+      border: 0;
+      cursor: pointer;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s ease, background-color .2s ease;
+      user-select: none;
+    }
+    .btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.16); }
+    .btn .material-icons{ font-size: 20px; color: var(--accent); }
+
+    .counter{
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      z-index: 50;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.25);
+      backdrop-filter: blur(6px);
+      color: rgba(255,255,255,.9);
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+
+    /* Responsive preview (si tu ouvres sur un écran différent) */
+    @media (max-width: 1300px){
+      body{ padding: 14px; overflow: auto; }
+      .deck{
+        width: 100%;
+        max-width: var(--w);
+        aspect-ratio: 16/9;
+        height: auto;
+      }
+      .slide{ position: relative; }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="slide">
-        <div class="overlay">
-            <div class="content">
-                <h1 class="title">Présentation Orale BTS SIO</h1>
-                <h2 class="subtitle">Services Informatiques aux Organisations</h2>
-                <div class="presenter">
-                    <i class="material-icons">person</i>
-                    Mia Mortier - BTS SIO 2ème année
-                </div>
-            </div>
-            <div class="bts-logo">
-                <i class="material-icons">school</i>
-                Année scolaire 2024-2025
-            </div>
-        </div>
+  <main class="deck" aria-label="Présentation BTS SIO">
+
+    <div class="counter" id="counter">Slide 1 / 4</div>
+
+    <div class="controls" aria-label="Contrôles">
+      <button class="btn" type="button" id="prevBtn">
+        <span class="material-icons">chevron_left</span> Précédent
+      </button>
+      <button class="btn" type="button" id="nextBtn">
+        Suivant <span class="material-icons">chevron_right</span>
+      </button>
     </div>
+
+    <!-- SLIDE 1 — Couverture -->
+    <section class="slide cover is-active"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg')"
+      aria-label="Couverture">
+      <div class="overlay">
+        <h1>Présentation Orale BTS SIO</h1>
+        <h2>Services Informatiques aux Organisations</h2>
+
+        <div class="chip" role="note" aria-label="Présentateur">
+          <span class="material-icons">person</span>
+          Mia Mortier — BTS SIO 2ème année
+        </div>
+
+        <div class="corner">
+          <span class="material-icons">school</span>
+          Année scolaire 2024–2025
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 — Sommaire -->
+    <section class="slide toc"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')"
+      aria-label="Sommaire">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Sommaire</h1>
+        </header>
+
+        <div class="content">
+          <div class="grid grid-2" style="width:100%;">
+            <div class="toc-item"><span class="toc-number">01</span><span class="material-icons">person</span> Présentation personnelle</div>
+            <div class="toc-item"><span class="toc-number">02</span><span class="material-icons">school</span> Réalisations en formation</div>
+            <div class="toc-item"><span class="toc-number">03</span><span class="material-icons">business</span> Présentation NCI</div>
+            <div class="toc-item"><span class="toc-number">04</span><span class="material-icons">work</span> Réalisations en entreprise</div>
+            <div class="toc-item"><span class="toc-number">05</span><span class="material-icons">trending_up</span> La veille</div>
+            <div class="toc-item"><span class="toc-number">06</span><span class="material-icons">psychology</span> Compétences développées</div>
+            <div class="toc-item" style="grid-column:1 / -1; max-width: calc(50% - 13px);">
+              <span class="toc-number">07</span><span class="material-icons">assessment</span> Bilan et perspectives
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 — Présentation Personnelle -->
+    <section class="slide"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')"
+      aria-label="Présentation personnelle">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Présentation personnelle</h1>
+        </header>
+
+        <div class="content" style="flex-direction:column; align-items:stretch;">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <span class="material-icons">person</span>
+            </div>
+
+            <div style="flex:1;">
+              <h2>Mia Mortier</h2>
+
+              <div class="meta" role="list">
+                <div class="meta-row" role="listitem">
+                  <span class="material-icons">school</span>
+                  <b>Formation actuelle :</b>
+                  BTS SIO option SISR en alternance (2ème année)
+                </div>
+                <div class="meta-row" role="listitem">
+                  <span class="material-icons">history</span>
+                  <b>Parcours :</b>
+                  BAC STMG option SIG
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <h3><span class="material-icons">psychology</span> Pourquoi un BTS SIO option SISR ?</h3>
+            <div class="callout-grid">
+              <div class="callout-point">
+                <span class="material-icons">laptop</span>
+                <div>Passion pour l’informatique et les technologies.</div>
+              </div>
+              <div class="callout-point">
+                <span class="material-icons">trending_up</span>
+                <div>Perspectives d’emploi solides dans un secteur en croissance.</div>
+              </div>
+              <div class="callout-point">
+                <span class="material-icons">build</span>
+                <div>Montée en compétences techniques + relationnelles.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 — Réalisations en Formation -->
+    <section class="slide"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')"
+      aria-label="Réalisations en formation">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Réalisations en formation</h1>
+        </header>
+
+        <div class="content">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">router</span></div>
+                <h2 class="card-title">Projets SISR</h2>
+              </div>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span><span><strong>Infrastructure</strong> réseau d’entreprise</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Sécurisation</strong> de serveurs web</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Virtualisation</strong> avec Proxmox</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Supervision</strong> de l’infrastructure</span></li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">security</span></div>
+                <h2 class="card-title">Compétences SISR</h2>
+              </div>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span><span><strong>Administration</strong> Linux / Windows</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Réseaux</strong> TCP/IP, VLAN, VPN</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Cybersécurité</strong> & audit système</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Services</strong> DNS / DHCP / Active Directory</span></li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">workspace_premium</span></div>
+                <h2 class="card-title">Certifications</h2>
+              </div>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span><span><strong>TryHackMe</strong></span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>CNIL</strong></span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>Microsoft</strong> Azure Fundamentals</span></li>
+                <li><span class="material-icons">check_circle</span><span><strong>SecNumAcadémie</strong></span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const counter = document.getElementById("counter");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let index = 0;
+
+    function render(){
+      slides.forEach((s,i)=> s.classList.toggle("is-active", i === index));
+      counter.textContent = `Slide ${index + 1} / ${slides.length}`;
+    }
+
+    function next(){
+      index = (index + 1) % slides.length;
+      render();
+    }
+
+    function prev(){
+      index = (index - 1 + slides.length) % slides.length;
+      render();
+    }
+
+    nextBtn.addEventListener("click", next);
+    prevBtn.addEventListener("click", prev);
+
+    window.addEventListener("keydown", (e)=>{
+      if (e.key === "ArrowRight" || e.key === "PageDown") next();
+      if (e.key === "ArrowLeft"  || e.key === "PageUp") prev();
+      if (e.key === "Home") { index = 0; render(); }
+      if (e.key === "End")  { index = slides.length - 1; render(); }
+    });
+
+    render();
+  </script>
 </body>
 </html>
