@@ -66,4 +66,4 @@ Le fichier principal de la présentation est accessible ici :
   👉 https://miami-14.github.io/presentation_oral/
 
 - 🔹 **Fichier HTML dans le dépôt GitHub**  
-  👉 https://github.com/miami-14/presentation_oral/blob/
+https://miami-14.github.io/bts_sio_oral/
