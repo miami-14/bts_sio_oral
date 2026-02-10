@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Présentation Orale BTS SIO</title>
 
-  <!-- Fonts / Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
@@ -75,7 +74,7 @@
 
     .title{
       margin: 0 0 18px;
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 700;
       letter-spacing: .5px;
       display: inline-block;
@@ -115,24 +114,18 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 14px 18px;
+      padding: 10px 14px;
       border-radius: var(--radius);
       background: rgba(163, 194, 255, 0.12);
       box-shadow: var(--shadow-sm);
-      transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
       font-weight: 600;
-    }
-    .chip:hover{
-      transform: translateY(-4px);
-      background: rgba(163, 194, 255, 0.18);
-      box-shadow: var(--shadow-md);
     }
     .chip .material-icons{ color: var(--accent); }
 
     .grid{
       width: 100%;
       display: grid;
-      gap: 26px;
+      gap: 22px;
     }
     .grid-2{ grid-template-columns: repeat(2, 1fr); }
     .grid-3{ grid-template-columns: repeat(3, 1fr); }
@@ -140,29 +133,23 @@
     .card{
       background: rgba(163, 194, 255, 0.11);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 20px;
       box-shadow: var(--shadow-sm);
-      transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
       height: 100%;
-    }
-    .card:hover{
-      transform: translateY(-6px);
-      background: rgba(163, 194, 255, 0.18);
-      box-shadow: var(--shadow-md);
     }
 
     .card-header{
       display: flex;
       align-items: center;
       gap: 14px;
-      padding-bottom: 16px;
-      margin-bottom: 18px;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
       border-bottom: 2px solid rgba(163, 194, 255, 0.25);
     }
 
     .icon-badge{
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
       display: grid;
       place-items: center;
@@ -172,7 +159,7 @@
     }
     .icon-badge .material-icons{
       color: var(--accent);
-      font-size: 28px;
+      font-size: 22px;
     }
 
     .card-title{
@@ -187,29 +174,28 @@
       padding: 0;
       margin: 0;
       display: grid;
-      gap: 14px;
-      font-size: 18px;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 1.35;
     }
     .list li{
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      line-height: 1.25;
     }
     .list .material-icons{
       color: var(--accent);
       font-size: 18px;
-      margin-top: 3px;
+      margin-top: 2px;
       flex: 0 0 auto;
     }
     .list strong{ color: var(--accent); font-weight: 700; }
 
-    /* Small “tag/pill” used for certs */
     .tags{
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
     .tag{
       display: inline-flex;
@@ -218,15 +204,14 @@
       padding: 7px 12px;
       border-radius: 999px;
       background: rgba(163, 194, 255, 0.14);
-      font-size: 15px;
+      font-size: 14px;
       box-shadow: var(--shadow-sm);
     }
     .tag .material-icons{ color: var(--accent); font-size: 18px; }
 
-    /* Image placeholder for certifications */
     .img-slot{
-      margin: 14px 0 10px;
-      height: 180px;
+      margin: 12px 0 10px;
+      height: 200px;
       border-radius: var(--radius);
       background: rgba(163, 194, 255, 0.06);
       border: 2px dashed rgba(163, 194, 255, 0.30);
@@ -239,6 +224,8 @@
       text-align: center;
       padding: 14px;
       opacity: .85;
+      font-size: 15px;
+      line-height: 1.3;
     }
     .img-slot .hint .material-icons{
       font-size: 44px;
@@ -294,22 +281,16 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       border-radius: var(--radius);
       background: rgba(163, 194, 255, 0.10);
       box-shadow: var(--shadow-sm);
-      transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
-    }
-    .toc-item:hover{
-      transform: translateX(10px);
-      background: rgba(163, 194, 255, 0.16);
-      box-shadow: var(--shadow-md);
     }
     .toc-number{
       min-width: 46px;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: var(--accent);
     }
@@ -318,32 +299,29 @@
     .profile{
       display: flex;
       align-items: center;
-      gap: 34px;
+      gap: 28px;
       width: 100%;
     }
     .avatar{
-      width: 180px;
-      height: 180px;
+      width: 170px;
+      height: 170px;
       border-radius: 999px;
       display: grid;
       place-items: center;
       background: rgba(163, 194, 255, 0.18);
       box-shadow: var(--shadow-md);
-      transition: transform .25s ease;
       flex: 0 0 auto;
     }
-    .avatar:hover{ transform: scale(1.04); }
-    .avatar .material-icons{ font-size: 96px; color: var(--accent); }
-
+    .avatar .material-icons{ font-size: 92px; color: var(--accent); }
     .profile h2{
       margin: 0 0 10px;
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
     }
     .meta{
       display: grid;
-      gap: 12px;
-      font-size: 20px;
+      gap: 10px;
+      font-size: 18px;
     }
     .meta-row{
       display: flex;
@@ -358,11 +336,11 @@
     }
 
     .callout{
-      margin-top: 26px;
+      margin-top: 18px;
       width: 100%;
       background: rgba(163, 194, 255, 0.14);
       border-left: 4px solid var(--accent);
-      padding: 18px 22px;
+      padding: 16px 18px;
       border-radius: 0 var(--radius) var(--radius) 0;
       box-shadow: var(--shadow-sm);
     }
@@ -372,31 +350,30 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 2px solid rgba(163, 194, 255, 0.25);
     }
     .callout-grid{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      font-size: 19px;
+      gap: 12px;
+      font-size: 17px;
+      line-height: 1.25;
     }
     .callout-point{
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      line-height: 1.25;
     }
     .callout-point .material-icons{ color: var(--accent); margin-top: 2px; }
 
-    /* NCI layout helpers */
     .stats{
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
     .stat{
       display: flex;
@@ -407,9 +384,7 @@
       padding: 12px 14px;
       box-shadow: var(--shadow-sm);
     }
-    .stat .icon-badge{ width: 44px; height: 44px; }
-    .stat strong{ color: var(--accent); font-size: 22px; line-height: 1; }
-    .stat span{ opacity: .95; }
+    .stat strong{ color: var(--accent); font-size: 20px; line-height: 1; }
 
     /* ===== Controls ===== */
     .controls{
@@ -431,10 +406,8 @@
       align-items: center;
       gap: 8px;
       box-shadow: var(--shadow-sm);
-      transition: transform .2s ease, background-color .2s ease;
       user-select: none;
     }
-    .btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.16); }
     .btn .material-icons{ font-size: 20px; color: var(--accent); }
 
     .counter{
@@ -462,140 +435,24 @@
       .slide{ position: relative; }
     }
 
-    /* ====== ZOOM / AGRANDISSEMENT (à coller tout en bas du <style>) ====== */
-
-/* 1) Agrandir la grille 2 colonnes (Certifications) */
-.grid-2{
-  grid-template-columns: repeat(2, minmax(520px, 1fr));
-  gap: 32px; /* plus d’espace entre les cartes */
-}
-
-/* 2) Agrandir le titre principal des slides */
-.title{
-  font-size: 48px;  /* au lieu de 42px */
-}
-
-/* 3) Agrandir les cartes */
-.card{
-  padding: 32px;    /* au lieu de 24px */
-  border-radius: 16px; /* un peu plus premium */
-}
-
-/* 4) Titres de cartes (TryHackMe, CNIL, etc.) */
-.card-title{
-  font-size: 28px;  /* au lieu de 22px */
-}
-
-/* 5) Texte dans les cartes (lisibilité soutenance) */
-.card p,
-.card div{
-  font-size: 20px;
-  line-height: 1.5;
-}
-
-/* 6) Agrandir la zone image (preuve de certification) */
-.img-slot{
-  height: 260px; /* au lieu de 180px */
-}
-
-/* 7) Agrandir le contenu du placeholder image */
-.img-slot .hint{
-  font-size: 18px;
-}
-.img-slot .hint .material-icons{
-  font-size: 52px;
-}
-
-/* 8) Tags (RGPD, Web Security, etc.) */
-.tag{
-  font-size: 16px;
-  padding: 8px 14px;
-}
-.tag .material-icons{
-  font-size: 18px;
-}
-
-.deck{
-  transform: scale(1.08);
-  transform-origin: center;
-}
-/* ===== Ajustement rapide — Slide Entreprise NCI ===== */
-
-.slide[aria-label="Entreprise NCI"]{
-  transform: scale(0.94);
-  transform-origin: center;
-}
-
-.slide[aria-label="Entreprise NCI"] .title{
-  font-size: 42px;
-}
-
-.slide[aria-label="Entreprise NCI"] .card{
-  padding: 22px;
-}
-
-.slide[aria-label="Entreprise NCI"] .card-title{
-  font-size: 22px;
-}
-
-.slide[aria-label="Entreprise NCI"] p,
-.slide[aria-label="Entreprise NCI"] div{
-  font-size: 17px;
-  line-height: 1.45;
-}
-
-/* ===== Nettoyage visuel — réduction des blocs gris ===== */
-
-/* Réduction générale des cartes */
-.card{
-  padding: 18px;
-  border-radius: 12px;
-}
-
-/* Réduction spécifique des blocs métiers et rôle */
-.chip,
-.job-card,
-.task-item{
-  padding: 8px 12px;
-  font-size: 15px;
-}
-
-/* Réduction des titres dans les blocs */
-.card-title,
-.section-title{
-  font-size: 21px;
-}
-
-/* Réduction du texte interne */
-.card p,
-.card div{
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-/* Icônes plus discrètes */
-.icon-badge{
-  width: 40px;
-  height: 40px;
-}
-.icon-badge .material-icons{
-  font-size: 20px;
-}
-
-/* Moins de hauteur inutile */
-.content{
-  padding-bottom: 24px;
-}
-
-
-
+    /* ===== Slide 9 (Veille) layout ===== */
+    .veil-grid{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    @media (max-width: 1300px){
+      .veil-grid{ grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
 <body>
   <main class="deck" aria-label="Présentation BTS SIO">
 
-    <div class="counter" id="counter">Slide 1 / 1</div>
+    <div class="counter" id="counter">Slide 1 / 9</div>
 
     <div class="controls" aria-label="Contrôles">
       <button class="btn" type="button" id="prevBtn">
@@ -606,7 +463,7 @@
       </button>
     </div>
 
-    <!-- SLIDE 1 — Couverture -->
+    <!-- ===================== SLIDE 1 — Couverture ===================== -->
     <section class="slide cover is-active"
       style="background-image:url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg')"
       aria-label="Couverture">
@@ -626,7 +483,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 2 — Sommaire -->
+    <!-- ===================== SLIDE 2 — Sommaire ===================== -->
     <section class="slide toc"
       style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')"
       aria-label="Sommaire">
@@ -643,7 +500,7 @@
             <div class="toc-item"><span class="toc-number">04</span><span class="material-icons">business</span> Entreprise NCI</div>
             <div class="toc-item"><span class="toc-number">05</span><span class="material-icons">work</span> Réalisations en entreprise</div>
             <div class="toc-item"><span class="toc-number">06</span><span class="material-icons">trending_up</span> Veille</div>
-            <div class="toc-item" style="grid-column:1 / -1; max-width: calc(50% - 13px);">
+            <div class="toc-item" style="grid-column:1 / -1; max-width: calc(50% - 11px);">
               <span class="toc-number">07</span><span class="material-icons">assessment</span> Bilan & perspectives
             </div>
           </div>
@@ -656,7 +513,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 3 — Présentation Personnelle -->
+    <!-- ===================== SLIDE 3 — Présentation personnelle ===================== -->
     <section class="slide"
       style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')"
       aria-label="Présentation personnelle">
@@ -715,7 +572,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 4 — Réalisations en Formation -->
+    <!-- ===================== SLIDE 4 — Réalisations en formation ===================== -->
     <section class="slide"
       style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')"
       aria-label="Réalisations en formation">
@@ -774,289 +631,311 @@
       </div>
     </section>
 
-    <!-- SLIDE 5 — Certifications (1/2) -->
-    <section class="slide"
-      style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')"
-      aria-label="Certifications 1 sur 2">
-      <div class="overlay">
-        <header class="header">
-          <h1 class="title">Certifications (1/2)</h1>
-        </header>
+    <!-- ===================== SLIDE 5 — Certifications (1/2) ===================== -->
+<!-- ===================== SLIDE 5 — Certifications (1/2) ===================== -->
+<section class="slide"
+  style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')"
+  aria-label="Certifications 1 sur 2">
+  <div class="overlay">
+    <header class="header">
+      <h1 class="title">Certifications (1/2)</h1>
+    </header>
 
-        <div class="content">
-          <div class="grid grid-2">
-            <article class="card">
-              <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">security</span></div>
-                <h2 class="card-title">TryHackMe</h2>
-              </div>
+    <div class="content">
+      <div class="grid grid-2">
 
-              <div class="img-slot">
-                <div class="hint">
-                  <span class="material-icons">add_photo_alternate</span>
-                  <div>Emplacement pour ta preuve / badge TryHackMe</div>
-                </div>
-                <small>PNG/JPG recommandé</small>
-              </div>
-
-              <div style="font-size:18px; line-height:1.35;">
-                Plateforme d’apprentissage pratique orientée <strong>cybersécurité offensive</strong> et mise en situation.
-              </div>
-
-              <div class="tags" aria-label="Compétences liées">
-                <span class="tag"><span class="material-icons">check_circle</span>Penetration Testing</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Web Security</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Network Security</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Offensive Security</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">policy</span></div>
-                <h2 class="card-title">CNIL</h2>
-              </div>
-
-              <div class="img-slot">
-                <div class="hint">
-                  <span class="material-icons">add_photo_alternate</span>
-                  <div>Emplacement pour ton attestation CNIL</div>
-                </div>
-                <small>PNG/JPG recommandé</small>
-              </div>
-
-              <div style="font-size:18px; line-height:1.35;">
-                Sensibilisation à la <strong>protection des données</strong> et aux exigences de conformité <strong>RGPD</strong>.
-              </div>
-
-              <div class="tags" aria-label="Compétences liées">
-                <span class="tag"><span class="material-icons">check_circle</span>RGPD</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Droits des personnes</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Conformité</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Traitements</span>
-              </div>
-            </article>
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">security</span></div>
+            <h2 class="card-title">TryHackMe</h2>
           </div>
-        </div>
 
-        <footer class="footer">
-          <div>Mia Mortier — BTS SIO 2ème année</div>
-          <div>Présentation orale</div>
-        </footer>
-      </div>
-    </section>
-
-    <!-- SLIDE 6 — Certifications (2/2) -->
-    <section class="slide"
-      style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')"
-      aria-label="Certifications 2 sur 2">
-      <div class="overlay">
-        <header class="header">
-          <h1 class="title">Certifications (2/2)</h1>
-        </header>
-
-        <div class="content">
-          <div class="grid grid-2">
-            <article class="card">
-              <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">cloud</span></div>
-                <h2 class="card-title">Microsoft</h2>
-              </div>
-
-              <div class="img-slot">
-                <div class="hint">
-                  <span class="material-icons">add_photo_alternate</span>
-                  <div>Emplacement pour la certification Microsoft</div>
-                </div>
-                <small>PNG/JPG recommandé</small>
-              </div>
-
-              <div style="font-size:18px; line-height:1.35;">
-                Notions fondamentales sur les services cloud et l’écosystème Microsoft (<strong>Azure Fundamentals</strong>).
-              </div>
-
-              <div class="tags" aria-label="Compétences liées">
-                <span class="tag"><span class="material-icons">check_circle</span>Azure Fundamentals</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Cloud</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Services</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Bonnes pratiques</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">verified_user</span></div>
-                <h2 class="card-title">SecNumAcadémie</h2>
-              </div>
-
-              <div class="img-slot">
-                <div class="hint">
-                  <span class="material-icons">add_photo_alternate</span>
-                  <div>Emplacement pour l’attestation SecNumAcadémie</div>
-                </div>
-                <small>PNG/JPG recommandé</small>
-              </div>
-
-              <div style="font-size:18px; line-height:1.35;">
-                Formation ANSSI : socle de <strong>bonnes pratiques</strong> et réflexes cybersécurité (SecNumBasics).
-              </div>
-
-              <div class="tags" aria-label="Compétences liées">
-                <span class="tag"><span class="material-icons">check_circle</span>Bonnes pratiques</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Sécurité SI</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Hygiène numérique</span>
-                <span class="tag"><span class="material-icons">check_circle</span>Incidents</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <footer class="footer">
-          <div>Mia Mortier — BTS SIO 2ème année</div>
-          <div>Présentation orale</div>
-        </footer>
-      </div>
-    </section>
-
-    <!-- SLIDE 7 — Entreprise NCI -->
-    <section class="slide"
-      style="background-image:url('https://sfile.chatglm.cn/images-ppt/a4bb91bf9308.jpg')"
-      aria-label="Entreprise NCI">
-      <div class="overlay">
-        <header class="header">
-          <h1 class="title">Entreprise NCI</h1>
-        </header>
-
-        <div class="content" style="align-items:stretch; gap:26px;">
-          <div class="grid" style="grid-template-columns: 1.15fr 0.85fr; gap:26px;">
-            <article class="card">
-              <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">business</span></div>
-                <h2 class="card-title">NCI Solutions</h2>
-              </div>
-
-              <div style="font-size:18px; line-height:1.45;">
-                <p style="margin:0 0 10px;">
-                  <strong>Entreprise spécialisée</strong> en infrastructures informatiques et services aux organisations.
-                </p>
-                <p style="margin:0 0 10px;">
-                  <strong>Alternance</strong> depuis <strong>juillet 2024</strong> (BTS SIO option SISR).
-                </p>
-                <p style="margin:0;">
-                  Domaines : <strong>administration système</strong>, <strong>réseaux</strong>, <strong>cybersécurité</strong>, <strong>solutions cloud</strong>.
-                </p>
-              </div>
-
-              <div class="stats" aria-label="Indicateurs clés">
-                <div class="stat">
-                  <div class="icon-badge"><span class="material-icons">groups</span></div>
-                  <div>
-                    <strong>40+</strong><br/>
-                    <span>collaborateurs</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div class="grid" style="grid-template-rows: 1fr 1fr; gap:26px;">
-              <article class="card">
-                <div class="card-header">
-                  <div class="icon-badge"><span class="material-icons">work</span></div>
-                  <h2 class="card-title">Métiers chez NCI</h2>
-                </div>
-
-                <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap:12px;">
-                  <div class="chip"><span class="material-icons">storefront</span> Commercial</div>
-                  <div class="chip"><span class="material-icons">code</span> Développeur web</div>
-                  <div class="chip"><span class="material-icons">visibility</span> Supervision</div>
-                  <div class="chip"><span class="material-icons">precision_manufacturing</span> Production</div>
-                  <div class="chip" style="grid-column: 1 / -1;"><span class="material-icons">support_agent</span> Support infrastructure</div>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card-header">
-                  <div class="icon-badge"><span class="material-icons">person</span></div>
-                  <h2 class="card-title">Mon rôle</h2>
-                </div>
-
-                <ul class="list">
-                  <li><span class="material-icons">check_circle</span><span><strong>Assistance</strong> aux utilisateurs</span></li>
-                  <li><span class="material-icons">check_circle</span><span><strong>Gestion</strong> des tickets</span></li>
-                  <li><span class="material-icons">check_circle</span><span><strong>Maintenance</strong> du parc informatique</span></li>
-                </ul>
-              </article>
+          <div class="img-slot">
+            <div class="hint">
+              <span class="material-icons">add_photo_alternate</span>
+              <div>Badge / preuve TryHackMe</div>
             </div>
+            <small>PNG / JPG</small>
           </div>
-        </div>
 
-        <footer class="footer">
-          <div>Mia Mortier — BTS SIO 2ème année</div>
-          <div>Présentation orale</div>
-        </footer>
+          <p>
+            Plateforme d’apprentissage pratique orientée <strong>cybersécurité offensive</strong>
+            et mise en situation réelle.
+          </p>
+
+          <div class="tags">
+            <span class="tag"><span class="material-icons">check_circle</span>Web Security</span>
+            <span class="tag"><span class="material-icons">check_circle</span>Network</span>
+            <span class="tag"><span class="material-icons">check_circle</span>Pentest</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">policy</span></div>
+            <h2 class="card-title">CNIL</h2>
+          </div>
+
+          <div class="img-slot">
+            <div class="hint">
+              <span class="material-icons">add_photo_alternate</span>
+              <div>Attestation CNIL</div>
+            </div>
+            <small>PNG / JPG</small>
+          </div>
+
+          <p>
+            Sensibilisation à la <strong>protection des données</strong> et au respect du
+            <strong>RGPD</strong>.
+          </p>
+
+          <div class="tags">
+            <span class="tag"><span class="material-icons">check_circle</span>RGPD</span>
+            <span class="tag"><span class="material-icons">check_circle</span>Données</span>
+            <span class="tag"><span class="material-icons">check_circle</span>Conformité</span>
+          </div>
+        </article>
+
       </div>
-    </section>
+    </div>
 
-    <!-- SLIDE 8 — Réalisations en Entreprise -->
+    <footer class="footer">
+      <div>Mia Mortier — BTS SIO 2ème année</div>
+      <div>Présentation orale</div>
+    </footer>
+  </div>
+</section>
+
+
+
+
+    <!-- ===================== SLIDE 6 — Certifications (2/2) ===================== -->
+<!-- ===================== SLIDE 6 — Certifications (2/2) ===================== -->
+<section class="slide"
+  style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')"
+  aria-label="Certifications 2 sur 2">
+  <div class="overlay">
+    <header class="header">
+      <h1 class="title">Certifications (2/2)</h1>
+    </header>
+
+    <div class="content">
+      <div class="grid grid-2">
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">cloud</span></div>
+            <h2 class="card-title">Microsoft Azure</h2>
+          </div>
+
+          <div class="img-slot">
+            <div class="hint">
+              <span class="material-icons">add_photo_alternate</span>
+              <div>Certification Microsoft</div>
+            </div>
+            <small>PNG / JPG</small>
+          </div>
+
+          <p>
+            Notions fondamentales du <strong>cloud computing</strong> et de l’environnement
+            <strong>Azure</strong>.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">verified_user</span></div>
+            <h2 class="card-title">SecNumAcadémie</h2>
+          </div>
+
+          <div class="img-slot">
+            <div class="hint">
+              <span class="material-icons">add_photo_alternate</span>
+              <div>Attestation SecNumAcadémie</div>
+            </div>
+            <small>PNG / JPG</small>
+          </div>
+
+          <p>
+            Formation ANSSI sur les <strong>bonnes pratiques</strong> et la
+            <strong>cybersécurité</strong>.
+          </p>
+        </article>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>Mia Mortier — BTS SIO 2ème année</div>
+      <div>Présentation orale</div>
+    </footer>
+  </div>
+</section>
+
+
+
+    <!-- ===================== SLIDE 7 — Entreprise NCI ===================== -->
+<!-- ===================== SLIDE 7 — Entreprise NCI ===================== -->
+<section class="slide"
+  style="background-image:url('https://sfile.chatglm.cn/images-ppt/a4bb91bf9308.jpg')"
+  aria-label="Entreprise NCI">
+  <div class="overlay">
+    <header class="header">
+      <h1 class="title">Entreprise NCI</h1>
+    </header>
+
+    <div class="content">
+      <div class="grid grid-2">
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">business</span></div>
+            <h2 class="card-title">Présentation</h2>
+          </div>
+          <p>
+            <strong>NCI Solutions</strong> est spécialisée dans les
+            <strong>infrastructures informatiques</strong> et les services aux entreprises.
+          </p>
+          <p>
+            Alternance commencée en <strong>juillet 2024</strong>.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">person</span></div>
+            <h2 class="card-title">Mon rôle</h2>
+          </div>
+          <ul class="list">
+            <li><span class="material-icons">check_circle</span>Support utilisateurs</li>
+            <li><span class="material-icons">check_circle</span>Gestion des tickets</li>
+            <li><span class="material-icons">check_circle</span>Maintenance du parc</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>Mia Mortier — BTS SIO 2ème année</div>
+      <div>Présentation orale</div>
+    </footer>
+  </div>
+</section>
+
+
+    <!-- ===================== SLIDE 8 — Réalisations en entreprise ===================== -->
+<!-- ===================== SLIDE 8 — Réalisations en entreprise ===================== -->
+<section class="slide"
+  style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')"
+  aria-label="Réalisations en entreprise">
+  <div class="overlay">
+    <header class="header">
+      <h1 class="title">Réalisations en entreprise</h1>
+    </header>
+
+    <div class="content">
+      <div class="grid grid-2">
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">account_tree</span></div>
+            <h2 class="card-title">Active Directory</h2>
+          </div>
+          <p>
+            Mise en place et administration d’un <strong>Active Directory</strong>
+            pour une gestion centralisée.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-badge"><span class="material-icons">dns</span></div>
+            <h2 class="card-title">Baie informatique</h2>
+          </div>
+          <p>
+            Réorganisation de la baie pour améliorer la <strong>sécurité</strong>
+            et la <strong>lisibilité</strong>.
+          </p>
+        </article>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>Mia Mortier — BTS SIO 2ème année</div>
+      <div>Présentation orale</div>
+    </footer>
+  </div>
+</section>
+
+
+    <!-- ===================== SLIDE 9 — La veille ===================== -->
     <section class="slide"
       style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')"
-      aria-label="Réalisations en entreprise">
+      aria-label="La veille">
       <div class="overlay">
         <header class="header">
-          <h1 class="title">Réalisations en entreprise</h1>
+          <h1 class="title">La veille</h1>
         </header>
 
-        <div class="content" style="flex-direction:column; align-items:stretch; gap:22px;">
-          <div class="grid grid-2">
+        <div class="content" style="align-items:stretch;">
+          <div class="veil-grid">
+
             <article class="card">
               <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">account_tree</span></div>
-                <div>
-                  <h2 class="card-title" style="margin-bottom:2px;">Active Directory</h2>
-                  <div style="opacity:.9;">Gestion de l’environnement / annuaire</div>
-                </div>
+                <div class="icon-badge"><span class="material-icons">search</span></div>
+                <h2 class="card-title">Définition</h2>
               </div>
-
-              <div class="tags" style="margin-top:0;">
-                <span class="tag"><span class="material-icons">calendar_today</span> Juillet 2024</span>
-                <span class="tag"><span class="material-icons">people</span> Identités</span>
-                <span class="tag"><span class="material-icons">policy</span> GPO</span>
-              </div>
-
-              <div style="font-size:18px; line-height:1.4; margin-top:12px;">
-                <strong>Mission :</strong> mise en place et administration d’un Active Directory pour une gestion
-                centralisée des utilisateurs, postes et stratégies (GPO).
-              </div>
+              <p style="margin:0 0 10px; font-size:16px; line-height:1.45;">
+                Démarche <strong>continue</strong> de suivi des évolutions (techniques, menaces, outils) pour <strong>anticiper</strong>.
+              </p>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span>Surveillance régulière</li>
+                <li><span class="material-icons">check_circle</span>Tri de l’information</li>
+                <li><span class="material-icons">check_circle</span>Synthèse et capitalisation</li>
+              </ul>
             </article>
 
             <article class="card">
               <div class="card-header">
-                <div class="icon-badge"><span class="material-icons">dns</span></div>
-                <div>
-                  <h2 class="card-title" style="margin-bottom:2px;">Baie informatique</h2>
-                  <div style="opacity:.9;">Optimisation de l’infrastructure</div>
-                </div>
+                <div class="icon-badge"><span class="material-icons">rss_feed</span></div>
+                <h2 class="card-title">Sources</h2>
               </div>
-
-              <div class="tags" style="margin-top:0;">
-                <span class="tag"><span class="material-icons">calendar_today</span> Septembre 2024</span>
-                <span class="tag"><span class="material-icons">storage</span> Serveurs</span>
-                <span class="tag"><span class="material-icons">security</span> Sécurisation</span>
-              </div>
-
-              <div style="font-size:18px; line-height:1.4; margin-top:12px;">
-                <strong>Mission :</strong> modernisation / réorganisation de la baie pour améliorer la disponibilité,
-                la lisibilité du câblage et le niveau de sécurité.
-              </div>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span><strong>Google Alerts</strong> : actus / vulnérabilités</li>
+                <li><span class="material-icons">check_circle</span><strong>Feedly</strong> : blogs / cybersécurité</li>
+                <li><span class="material-icons">check_circle</span><strong>Officiels</strong> : éditeurs, ANSSI, CERT</li>
+              </ul>
             </article>
-          </div>
 
-          <div class="grid" style="grid-template-columns: repeat(5, 1fr); gap:14px;">
-            <div class="chip" style="justify-content:center;"><span class="material-icons">account_tree</span> Utilisateurs</div>
-            <div class="chip" style="justify-content:center;"><span class="material-icons">policy</span> GPO</div>
-            <div class="chip" style="justify-content:center;"><span class="material-icons">storage</span> Serveurs</div>
-            <div class="chip" style="justify-content:center;"><span class="material-icons">security</span> Sécurité</div>
-            <div class="chip" style="justify-content:center;"><span class="material-icons">backup</span> Sauvegarde</div>
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">trending_up</span></div>
+                <h2 class="card-title">Objectifs</h2>
+              </div>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span>Anticiper les failles</li>
+                <li><span class="material-icons">check_circle</span>Mettre à jour les pratiques</li>
+                <li><span class="material-icons">check_circle</span>Orienter les choix techniques</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">school</span></div>
+                <h2 class="card-title">Lien BTS SIO</h2>
+              </div>
+              <p style="margin:0 0 10px; font-size:16px; line-height:1.45;">
+                Utilisée pour les <strong>projets</strong>, la <strong>cybersécurité</strong> et les <strong>réalisations</strong> en entreprise.
+              </p>
+              <ul class="list">
+                <li><span class="material-icons">check_circle</span>Documentation</li>
+                <li><span class="material-icons">check_circle</span>Bonnes pratiques</li>
+                <li><span class="material-icons">check_circle</span>Outils et méthodes</li>
+              </ul>
+            </article>
+
           </div>
         </div>
 
@@ -1106,203 +985,3 @@
   </script>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La veille</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:'Source Sans Pro',sans-serif;
-      color:#fff;
-      overflow:hidden;
-    }
-
-    .slide{
-      width:1280px;
-      height:720px;
-      background:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg') center/cover no-repeat;
-      position:relative;
-    }
-
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(0,32,96,.85);
-      display:flex;
-      flex-direction:column;
-    }
-
-    .header{
-      padding:40px 70px 20px;
-    }
-
-    .title{
-      font-size:42px;
-      font-weight:700;
-      position:relative;
-    }
-
-    .title::after{
-      content:"";
-      display:block;
-      width:80px;
-      height:4px;
-      margin-top:10px;
-      background:#a3c2ff;
-    }
-
-    .content{
-      flex:1;
-      padding:0 70px 40px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      align-items:start;
-    }
-
-    .card{
-      background:rgba(163,194,255,.14);
-      border-radius:12px;
-      padding:20px;
-    }
-
-    .card-header{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding-bottom:12px;
-      margin-bottom:12px;
-      border-bottom:2px solid rgba(163,194,255,.3);
-    }
-
-    .card-header i{
-      color:#a3c2ff;
-    }
-
-    .card-title{
-      font-size:22px;
-      font-weight:600;
-      color:#a3c2ff;
-    }
-
-    .card p{
-      font-size:17px;
-      line-height:1.5;
-      margin-bottom:8px;
-    }
-
-    .list{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      font-size:17px;
-    }
-
-    .list li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-    }
-
-    .list i{
-      color:#a3c2ff;
-      font-size:18px;
-      margin-top:2px;
-    }
-
-    .footer{
-      padding:15px 70px;
-      font-size:16px;
-      color:#a3c2ff;
-      display:flex;
-      justify-content:space-between;
-    }
-  </style>
-</head>
-
-<!-- SLIDE 9 — La veille -->
-<section class="slide"
-  style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')"
-  aria-label="La veille">
-  <div class="overlay">
-    <header class="header">
-      <h1 class="title">La veille</h1>
-    </header>
-
-    <div class="content" style="align-items:stretch;">
-      <div class="veil-grid">
-
-        <article class="veil-card">
-          <div class="card-header">
-            <div class="icon-badge"><span class="material-icons">search</span></div>
-            <h2 class="card-title">Définition</h2>
-          </div>
-          <p>
-            Démarche <strong>continue</strong> de suivi des évolutions (techniques, menaces, outils)
-            pour <strong>anticiper</strong> et rester à jour.
-          </p>
-          <ul class="veil-list">
-            <li><span class="material-icons">check_circle</span>Surveillance régulière</li>
-            <li><span class="material-icons">check_circle</span>Tri de l’information</li>
-            <li><span class="material-icons">check_circle</span>Capitalisation (notes / synthèse)</li>
-          </ul>
-        </article>
-
-        <article class="veil-card">
-          <div class="card-header">
-            <div class="icon-badge"><span class="material-icons">rss_feed</span></div>
-            <h2 class="card-title">Sources</h2>
-          </div>
-          <ul class="veil-list">
-            <li><span class="material-icons">check_circle</span><strong>Google Alerts</strong> : actus / vulnérabilités</li>
-            <li><span class="material-icons">check_circle</span><strong>Feedly</strong> : blogs / cybersécurité</li>
-            <li><span class="material-icons">check_circle</span><strong>Sites officiels</strong> : éditeurs, ANSSI, CERT</li>
-          </ul>
-        </article>
-
-        <article class="veil-card">
-          <div class="card-header">
-            <div class="icon-badge"><span class="material-icons">trending_up</span></div>
-            <h2 class="card-title">Objectifs</h2>
-          </div>
-          <ul class="veil-list">
-            <li><span class="material-icons">check_circle</span>Anticiper les failles</li>
-            <li><span class="material-icons">check_circle</span>Mettre à jour les pratiques</li>
-            <li><span class="material-icons">check_circle</span>Orienter les choix techniques</li>
-          </ul>
-        </article>
-
-        <article class="veil-card">
-          <div class="card-header">
-            <div class="icon-badge"><span class="material-icons">school</span></div>
-            <h2 class="card-title">Lien BTS SIO</h2>
-          </div>
-          <p>
-            Utilisée pour les <strong>projets</strong>, la <strong>cybersécurité</strong> et les
-            <strong>réalisations</strong> en entreprise.
-          </p>
-          <ul class="veil-list">
-            <li><span class="material-icons">check_circle</span>Documentation</li>
-            <li><span class="material-icons">check_circle</span>Bonnes pratiques</li>
-            <li><span class="material-icons">check_circle</span>Outils et méthodes</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div>Mia Mortier — BTS SIO 2ème année</div>
-      <div>Présentation orale</div>
-    </footer>
-  </div>
-</section>
