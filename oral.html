@@ -41,7 +41,6 @@
       overflow: hidden;
     }
 
-    /* ===== Deck wrapper ===== */
     .deck{
       width: var(--w);
       height: var(--h);
@@ -52,7 +51,6 @@
       background: #111;
     }
 
-    /* ===== Slide system ===== */
     .slide{
       position: absolute;
       inset: 0;
@@ -136,7 +134,6 @@
       display: grid;
       gap: 26px;
     }
-
     .grid-2{ grid-template-columns: repeat(2, 1fr); }
     .grid-3{ grid-template-columns: repeat(3, 1fr); }
 
@@ -206,6 +203,59 @@
       flex: 0 0 auto;
     }
     .list strong{ color: var(--accent); font-weight: 700; }
+
+    /* Small “tag/pill” used for certs */
+    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .tag{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(163, 194, 255, 0.14);
+      font-size: 15px;
+      box-shadow: var(--shadow-sm);
+    }
+    .tag .material-icons{ color: var(--accent); font-size: 18px; }
+
+    /* Image placeholder for certifications */
+    .img-slot{
+      margin: 14px 0 10px;
+      height: 180px;
+      border-radius: var(--radius);
+      background: rgba(163, 194, 255, 0.06);
+      border: 2px dashed rgba(163, 194, 255, 0.30);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .img-slot .hint{
+      text-align: center;
+      padding: 14px;
+      opacity: .85;
+    }
+    .img-slot .hint .material-icons{
+      font-size: 44px;
+      color: rgba(163, 194, 255, 0.55);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .img-slot small{
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(0,0,0,.35);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      opacity: .85;
+    }
 
     /* ===== Slide specific ===== */
     .cover .overlay{
@@ -341,6 +391,26 @@
     }
     .callout-point .material-icons{ color: var(--accent); margin-top: 2px; }
 
+    /* NCI layout helpers */
+    .stats{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(163, 194, 255, 0.10);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .stat .icon-badge{ width: 44px; height: 44px; }
+    .stat strong{ color: var(--accent); font-size: 22px; line-height: 1; }
+    .stat span{ opacity: .95; }
+
     /* ===== Controls ===== */
     .controls{
       position: absolute;
@@ -381,7 +451,6 @@
       letter-spacing: .2px;
     }
 
-    /* Responsive preview (si tu ouvres sur un écran différent) */
     @media (max-width: 1300px){
       body{ padding: 14px; overflow: auto; }
       .deck{
@@ -398,7 +467,7 @@
 <body>
   <main class="deck" aria-label="Présentation BTS SIO">
 
-    <div class="counter" id="counter">Slide 1 / 4</div>
+    <div class="counter" id="counter">Slide 1 / 1</div>
 
     <div class="controls" aria-label="Contrôles">
       <button class="btn" type="button" id="prevBtn">
@@ -442,12 +511,12 @@
           <div class="grid grid-2" style="width:100%;">
             <div class="toc-item"><span class="toc-number">01</span><span class="material-icons">person</span> Présentation personnelle</div>
             <div class="toc-item"><span class="toc-number">02</span><span class="material-icons">school</span> Réalisations en formation</div>
-            <div class="toc-item"><span class="toc-number">03</span><span class="material-icons">business</span> Présentation NCI</div>
-            <div class="toc-item"><span class="toc-number">04</span><span class="material-icons">work</span> Réalisations en entreprise</div>
-            <div class="toc-item"><span class="toc-number">05</span><span class="material-icons">trending_up</span> La veille</div>
-            <div class="toc-item"><span class="toc-number">06</span><span class="material-icons">psychology</span> Compétences développées</div>
+            <div class="toc-item"><span class="toc-number">03</span><span class="material-icons">workspace_premium</span> Certifications</div>
+            <div class="toc-item"><span class="toc-number">04</span><span class="material-icons">business</span> Entreprise NCI</div>
+            <div class="toc-item"><span class="toc-number">05</span><span class="material-icons">work</span> Réalisations en entreprise</div>
+            <div class="toc-item"><span class="toc-number">06</span><span class="material-icons">trending_up</span> Veille</div>
             <div class="toc-item" style="grid-column:1 / -1; max-width: calc(50% - 13px);">
-              <span class="toc-number">07</span><span class="material-icons">assessment</span> Bilan et perspectives
+              <span class="toc-number">07</span><span class="material-icons">assessment</span> Bilan & perspectives
             </div>
           </div>
         </div>
@@ -497,15 +566,15 @@
             <div class="callout-grid">
               <div class="callout-point">
                 <span class="material-icons">laptop</span>
-                <div>Passion pour l’informatique et les technologies.</div>
+                <div>Appétence pour l’infrastructure, les systèmes et les technologies.</div>
               </div>
               <div class="callout-point">
                 <span class="material-icons">trending_up</span>
-                <div>Perspectives d’emploi solides dans un secteur en croissance.</div>
+                <div>Débouchés solides et besoin continu en compétences SISR.</div>
               </div>
               <div class="callout-point">
                 <span class="material-icons">build</span>
-                <div>Montée en compétences techniques + relationnelles.</div>
+                <div>Développement de compétences techniques + posture support.</div>
               </div>
             </div>
           </div>
@@ -567,6 +636,299 @@
                 <li><span class="material-icons">check_circle</span><span><strong>SecNumAcadémie</strong></span></li>
               </ul>
             </article>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 — Certifications (1/2) -->
+    <section class="slide"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')"
+      aria-label="Certifications 1 sur 2">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Certifications (1/2)</h1>
+        </header>
+
+        <div class="content">
+          <div class="grid grid-2">
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">security</span></div>
+                <h2 class="card-title">TryHackMe</h2>
+              </div>
+
+              <div class="img-slot">
+                <div class="hint">
+                  <span class="material-icons">add_photo_alternate</span>
+                  <div>Emplacement pour ta preuve / badge TryHackMe</div>
+                </div>
+                <small>PNG/JPG recommandé</small>
+              </div>
+
+              <div style="font-size:18px; line-height:1.35;">
+                Plateforme d’apprentissage pratique orientée <strong>cybersécurité offensive</strong> et mise en situation.
+              </div>
+
+              <div class="tags" aria-label="Compétences liées">
+                <span class="tag"><span class="material-icons">check_circle</span>Penetration Testing</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Web Security</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Network Security</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Offensive Security</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">policy</span></div>
+                <h2 class="card-title">CNIL</h2>
+              </div>
+
+              <div class="img-slot">
+                <div class="hint">
+                  <span class="material-icons">add_photo_alternate</span>
+                  <div>Emplacement pour ton attestation CNIL</div>
+                </div>
+                <small>PNG/JPG recommandé</small>
+              </div>
+
+              <div style="font-size:18px; line-height:1.35;">
+                Sensibilisation à la <strong>protection des données</strong> et aux exigences de conformité <strong>RGPD</strong>.
+              </div>
+
+              <div class="tags" aria-label="Compétences liées">
+                <span class="tag"><span class="material-icons">check_circle</span>RGPD</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Droits des personnes</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Conformité</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Traitements</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 — Certifications (2/2) -->
+    <section class="slide"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')"
+      aria-label="Certifications 2 sur 2">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Certifications (2/2)</h1>
+        </header>
+
+        <div class="content">
+          <div class="grid grid-2">
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">cloud</span></div>
+                <h2 class="card-title">Microsoft</h2>
+              </div>
+
+              <div class="img-slot">
+                <div class="hint">
+                  <span class="material-icons">add_photo_alternate</span>
+                  <div>Emplacement pour la certification Microsoft</div>
+                </div>
+                <small>PNG/JPG recommandé</small>
+              </div>
+
+              <div style="font-size:18px; line-height:1.35;">
+                Notions fondamentales sur les services cloud et l’écosystème Microsoft (<strong>Azure Fundamentals</strong>).
+              </div>
+
+              <div class="tags" aria-label="Compétences liées">
+                <span class="tag"><span class="material-icons">check_circle</span>Azure Fundamentals</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Cloud</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Services</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Bonnes pratiques</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">verified_user</span></div>
+                <h2 class="card-title">SecNumAcadémie</h2>
+              </div>
+
+              <div class="img-slot">
+                <div class="hint">
+                  <span class="material-icons">add_photo_alternate</span>
+                  <div>Emplacement pour l’attestation SecNumAcadémie</div>
+                </div>
+                <small>PNG/JPG recommandé</small>
+              </div>
+
+              <div style="font-size:18px; line-height:1.35;">
+                Formation ANSSI : socle de <strong>bonnes pratiques</strong> et réflexes cybersécurité (SecNumBasics).
+              </div>
+
+              <div class="tags" aria-label="Compétences liées">
+                <span class="tag"><span class="material-icons">check_circle</span>Bonnes pratiques</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Sécurité SI</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Hygiène numérique</span>
+                <span class="tag"><span class="material-icons">check_circle</span>Incidents</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 — Entreprise NCI -->
+    <section class="slide"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/a4bb91bf9308.jpg')"
+      aria-label="Entreprise NCI">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Entreprise NCI</h1>
+        </header>
+
+        <div class="content" style="align-items:stretch; gap:26px;">
+          <div class="grid" style="grid-template-columns: 1.15fr 0.85fr; gap:26px;">
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">business</span></div>
+                <h2 class="card-title">NCI Solutions</h2>
+              </div>
+
+              <div style="font-size:18px; line-height:1.45;">
+                <p style="margin:0 0 10px;">
+                  <strong>Entreprise spécialisée</strong> en infrastructures informatiques et services aux organisations.
+                </p>
+                <p style="margin:0 0 10px;">
+                  <strong>Alternance</strong> depuis <strong>juillet 2024</strong> (BTS SIO option SISR).
+                </p>
+                <p style="margin:0;">
+                  Domaines : <strong>administration système</strong>, <strong>réseaux</strong>, <strong>cybersécurité</strong>, <strong>solutions cloud</strong>.
+                </p>
+              </div>
+
+              <div class="stats" aria-label="Indicateurs clés">
+                <div class="stat">
+                  <div class="icon-badge"><span class="material-icons">groups</span></div>
+                  <div>
+                    <strong>40+</strong><br/>
+                    <span>collaborateurs</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div class="grid" style="grid-template-rows: 1fr 1fr; gap:26px;">
+              <article class="card">
+                <div class="card-header">
+                  <div class="icon-badge"><span class="material-icons">work</span></div>
+                  <h2 class="card-title">Métiers chez NCI</h2>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap:12px;">
+                  <div class="chip"><span class="material-icons">storefront</span> Commercial</div>
+                  <div class="chip"><span class="material-icons">code</span> Développeur web</div>
+                  <div class="chip"><span class="material-icons">visibility</span> Supervision</div>
+                  <div class="chip"><span class="material-icons">precision_manufacturing</span> Production</div>
+                  <div class="chip" style="grid-column: 1 / -1;"><span class="material-icons">support_agent</span> Support infrastructure</div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header">
+                  <div class="icon-badge"><span class="material-icons">person</span></div>
+                  <h2 class="card-title">Mon rôle</h2>
+                </div>
+
+                <ul class="list">
+                  <li><span class="material-icons">check_circle</span><span><strong>Assistance</strong> aux utilisateurs</span></li>
+                  <li><span class="material-icons">check_circle</span><span><strong>Gestion</strong> des tickets</span></li>
+                  <li><span class="material-icons">check_circle</span><span><strong>Maintenance</strong> du parc informatique</span></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>Mia Mortier — BTS SIO 2ème année</div>
+          <div>Présentation orale</div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 — Réalisations en Entreprise -->
+    <section class="slide"
+      style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')"
+      aria-label="Réalisations en entreprise">
+      <div class="overlay">
+        <header class="header">
+          <h1 class="title">Réalisations en entreprise</h1>
+        </header>
+
+        <div class="content" style="flex-direction:column; align-items:stretch; gap:22px;">
+          <div class="grid grid-2">
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">account_tree</span></div>
+                <div>
+                  <h2 class="card-title" style="margin-bottom:2px;">Active Directory</h2>
+                  <div style="opacity:.9;">Gestion de l’environnement / annuaire</div>
+                </div>
+              </div>
+
+              <div class="tags" style="margin-top:0;">
+                <span class="tag"><span class="material-icons">calendar_today</span> Juillet 2024</span>
+                <span class="tag"><span class="material-icons">people</span> Identités</span>
+                <span class="tag"><span class="material-icons">policy</span> GPO</span>
+              </div>
+
+              <div style="font-size:18px; line-height:1.4; margin-top:12px;">
+                <strong>Mission :</strong> mise en place et administration d’un Active Directory pour une gestion
+                centralisée des utilisateurs, postes et stratégies (GPO).
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div class="icon-badge"><span class="material-icons">dns</span></div>
+                <div>
+                  <h2 class="card-title" style="margin-bottom:2px;">Baie informatique</h2>
+                  <div style="opacity:.9;">Optimisation de l’infrastructure</div>
+                </div>
+              </div>
+
+              <div class="tags" style="margin-top:0;">
+                <span class="tag"><span class="material-icons">calendar_today</span> Septembre 2024</span>
+                <span class="tag"><span class="material-icons">storage</span> Serveurs</span>
+                <span class="tag"><span class="material-icons">security</span> Sécurisation</span>
+              </div>
+
+              <div style="font-size:18px; line-height:1.4; margin-top:12px;">
+                <strong>Mission :</strong> modernisation / réorganisation de la baie pour améliorer la disponibilité,
+                la lisibilité du câblage et le niveau de sécurité.
+              </div>
+            </article>
+          </div>
+
+          <div class="grid" style="grid-template-columns: repeat(5, 1fr); gap:14px;">
+            <div class="chip" style="justify-content:center;"><span class="material-icons">account_tree</span> Utilisateurs</div>
+            <div class="chip" style="justify-content:center;"><span class="material-icons">policy</span> GPO</div>
+            <div class="chip" style="justify-content:center;"><span class="material-icons">storage</span> Serveurs</div>
+            <div class="chip" style="justify-content:center;"><span class="material-icons">security</span> Sécurité</div>
+            <div class="chip" style="justify-content:center;"><span class="material-icons">backup</span> Sauvegarde</div>
           </div>
         </div>
 
