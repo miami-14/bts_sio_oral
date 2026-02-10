@@ -111,3 +111,1900 @@
     </div>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sommaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 50px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 25px 60px;
+        }
+        .toc-item {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            color: #ffffff;
+            transition: transform 0.3s;
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .toc-item:hover {
+            transform: translateX(10px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .toc-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #a3c2ff;
+            margin-right: 15px;
+            min-width: 40px;
+        }
+        .toc-text {
+            font-weight: 600;
+        }
+        .toc-icon {
+            margin-right: 15px;
+            color: #a3c2ff;
+            font-size: 24px;
+        }
+        .footer {
+            padding: 20px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Sommaire</h1>
+            </div>
+            <div class="content">
+                <div class="toc-list">
+                    <div class="toc-item">
+                        <span class="toc-number">01</span>
+                        <i class="material-icons toc-icon">person</i>
+                        <span class="toc-text">Présentation Personnelle</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">02</span>
+                        <i class="material-icons toc-icon">school</i>
+                        <span class="toc-text">Réalisations en Formation</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">03</span>
+                        <i class="material-icons toc-icon">business</i>
+                        <span class="toc-text">Présentation NCI</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">04</span>
+                        <i class="material-icons toc-icon">work</i>
+                        <span class="toc-text">Réalisations en Entreprise</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">05</span>
+                        <i class="material-icons toc-icon">trending_up</i>
+                        <span class="toc-text">La veille</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">06</span>
+                        <i class="material-icons toc-icon">psychology</i>
+                        <span class="toc-text">Compétences Développées</span>
+                    </div>
+                    <div class="toc-item">
+                        <span class="toc-number">07</span>
+                        <i class="material-icons toc-icon">assessment</i>
+                        <span class="toc-text">Bilan et perspectives</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Personnelle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 50px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        .profile-image i {
+            font-size: 100px;
+            color: #a3c2ff;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .profile-item {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+        .profile-item i {
+            color: #a3c2ff;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        .profile-item strong {
+            color: #a3c2ff;
+            margin-right: 10px;
+            min-width: 150px;
+        }
+        .motivation-container {
+            background-color: rgba(163, 194, 255, 0.15);
+            border-left: 4px solid #a3c2ff;
+            padding: 20px 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .motivation-container:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .motivation-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #a3c2ff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 15px;
+        }
+        .motivation-title i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        .motivation-points {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .motivation-point {
+            flex: 1;
+            font-size: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .motivation-point i {
+            color: #a3c2ff;
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .footer {
+            padding: 20px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Présentation Personnelle</h1>
+            </div>
+            <div class="content">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <i class="material-icons">person</i>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">Mia Mortier</h2>
+                        <div class="profile-details">
+                            <div class="profile-item">
+                                <i class="material-icons">school</i>
+                                <strong>Formation actuelle:</strong> BTS SIO option SISR en alternance (2ème année)
+                            </div>
+                            <div class="profile-item">
+                                <i class="material-icons">history</i>
+                                <strong>Parcours:</strong> BAC STMG avec option SIG
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="motivation-container">
+                    <h3 class="motivation-title">
+                        <i class="material-icons">psychology</i>
+                        Pourquoi faire un BTS SIO option SISR?
+                    </h3>
+                    <div class="motivation-points">
+                        <div class="motivation-point">
+                            <i class="material-icons">laptop</i>
+                            <div>Passion pour l'informatique et les nouvelles technologies</div>
+                        </div>
+                        <div class="motivation-point">
+                            <i class="material-icons">trending_up</i>
+                            <div>Opportunités professionnelles variées dans un secteur en croissance</div>
+                        </div>
+                        <div class="motivation-point">
+                            <i class="material-icons">build</i>
+                            <div>Développement de compétences techniques et relationnelles</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations en Formation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 50px 70px 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .achievement-card {
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 15px;
+        }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-icon i {
+            font-size: 28px;
+            color: #a3c2ff;
+        }
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #a3c2ff;
+        }
+        .card-content {
+            flex-grow: 1;
+        }
+        .achievement-list {
+            list-style-type: none;
+        }
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .achievement-item i {
+            color: #a3c2ff;
+            margin-right: 10px;
+            font-size: 18px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .achievement-item strong {
+            color: #a3c2ff;
+            margin-right: 5px;
+        }
+        .footer {
+            padding: 20px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Réalisations en Formation</h1>
+            </div>
+            <div class="content">
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">router</i>
+                            </div>
+                            <h2 class="card-title">Projets SISR</h2>
+                        </div>
+                        <div class="card-content">
+                            <ul class="achievement-list">
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Infrastructure</strong> réseau d'entreprise</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Sécurisation</strong> serveurs web</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Virtualisation</strong> avec&nbsp;Proxmox&nbsp;</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Monitoring</strong> infrastructure</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">security</i>
+                            </div>
+                            <h2 class="card-title">Compétences SISR</h2>
+                        </div>
+                        <div class="card-content">
+                            <ul class="achievement-list">
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Administration</strong> Linux/Windows</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Réseaux</strong> TCP/IP/VLAN/VPN</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Cybersécurité</strong> et audit système</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Services</strong> DNS/DHCP/Active Directory</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">workspace_premium</i>
+                            </div>
+                            <h2 class="card-title">Certifications</h2>
+                        </div>
+                        <div class="card-content">
+                            <ul class="achievement-list">
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong class="">TryHakeMe</strong></span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong class="">CNIL</strong>&nbsp;</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong>Microsoft</strong> Azure Fundamentals</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <i class="material-icons">check_circle</i>
+                                    <span><strong class="">SecNumAcadémie</strong>&nbsp;</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+
+</body></html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications (1/2)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 30px 70px 10px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .certifications-container {
+            display: flex;
+            gap: 30px;
+            height: 100%;
+        }
+        .cert-card {
+            flex: 1;
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-icon i {
+            font-size: 28px;
+            color: #a3c2ff;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #a3c2ff;
+        }
+        .cert-image-container {
+            height: 180px;
+            background-color: rgba(163, 194, 255, 0.05);
+            border-radius: 8px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed rgba(163, 194, 255, 0.3);
+            overflow: hidden;
+        }
+        .cert-image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+        .cert-image-placeholder i {
+            font-size: 40px;
+            color: rgba(163, 194, 255, 0.5);
+            margin-bottom: 8px;
+        }
+        .cert-image-placeholder p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .cert-description {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        .cert-key-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .key-point {
+            background-color: rgba(163, 194, 255, 0.15);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+        .key-point i {
+            font-size: 16px;
+            color: #a3c2ff;
+            margin-right: 6px;
+        }
+        .footer {
+            padding: 15px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Certifications (1/2)</h1>
+            </div>
+            <div class="content">
+                <div class="certifications-container">
+                    <div class="cert-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">security</i>
+                            </div>
+                            <h2 class="card-title">TryHackMe</h2>
+                        </div>
+                        <div class="cert-image-container">
+                            <div class="cert-image-placeholder">
+                                <i class="material-icons">add_photo_alternate</i>
+                                <p>Espace pour la certification TryHackMe</p>
+                            </div>
+                        </div>
+                        <div class="cert-description">
+                            Plateforme d'apprentissage pratique en cybersécurité
+                        </div>
+                        <div class="cert-key-points">
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Penetration Testing</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Web Security</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Network Security</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Offensive Security</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">policy</i>
+                            </div>
+                            <h2 class="card-title">CNIL</h2>
+                        </div>
+                        <div class="cert-image-container">
+                            <div class="cert-image-placeholder">
+                                <i class="material-icons">add_photo_alternate</i>
+                                <p>Espace pour la certification CNIL</p>
+                            </div>
+                        </div>
+                        <div class="cert-description">
+                            Formation sur la protection des données personnelles et conformité RGPD
+                        </div>
+                        <div class="cert-key-points">
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>RGPD</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Protection des données</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Droits des personnes</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Responsables de traitement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications (2/2)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 30px 70px 10px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .certifications-container {
+            display: flex;
+            gap: 30px;
+            height: 100%;
+        }
+        .cert-card {
+            flex: 1;
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-icon i {
+            font-size: 28px;
+            color: #a3c2ff;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #a3c2ff;
+        }
+        .cert-image-container {
+            height: 180px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed rgba(163, 194, 255, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        .cert-image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+        }
+        .cert-image-placeholder i {
+            font-size: 40px;
+            color: rgba(163, 194, 255, 0.5);
+            margin-bottom: 8px;
+        }
+        .cert-image-placeholder p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .cert-description {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        .cert-key-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .key-point {
+            background-color: rgba(163, 194, 255, 0.15);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+        .key-point i {
+            font-size: 16px;
+            color: #a3c2ff;
+            margin-right: 6px;
+        }
+        .footer {
+            padding: 15px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+        .image-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Certifications (2/2)</h1>
+            </div>
+            <div class="content">
+                <div class="certifications-container">
+                    <div class="cert-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">cloud</i>
+                            </div>
+                            <h2 class="card-title">Microsoft</h2>
+                        </div>
+                        <div class="cert-image-container">
+                            <div class="cert-image-placeholder">
+                                <i class="material-icons">add_photo_alternate</i>
+                                <p>Cliquez ici pour ajouter votre certification Microsoft</p>
+                                <div class="image-hint">Format recommandé : PNG/JPG</div>
+                            </div>
+                        </div>
+                        <div class="cert-description">
+                            Compétences sur les solutions Microsoft pour l'administration système et cloud
+                        </div>
+                        <div class="cert-key-points">
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Azure Fundamentals</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Windows Server</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>PowerShell</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Office 365</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">verified_user</i>
+                            </div>
+                            <h2 class="card-title">SecNumAcadémie</h2>
+                        </div>
+                        <div class="cert-image-container">
+                            <div class="cert-image-placeholder">
+                                <i class="material-icons">add_photo_alternate</i>
+                                <p>Cliquez ici pour ajouter votre certification SecNumAcadémie</p>
+                                <div class="image-hint">Format recommandé : PNG/JPG</div>
+                            </div>
+                        </div>
+                        <div class="cert-description">
+                            Formation de l'ANSSI sur les bonnes pratiques de cybersécurité
+                        </div>
+                        <div class="cert-key-points">
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Sécurité des systèmes</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Bonnes pratiques ANSSI</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>SecNumBasics</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="material-icons">check_circle</i>
+                                <span>Gestion des incidents</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entreprise NCI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/a4bb91bf9308.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 25px 70px 8px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .nci-definition {
+            background-color: rgba(163, 194, 255, 0.15);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 16px;
+        }
+        .nci-definition:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .nci-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #a3c2ff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 8px;
+        }
+        .nci-title i {
+            margin-right: 8px;
+            font-size: 24px;
+        }
+        .nci-text {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .nci-text strong {
+            color: #a3c2ff;
+        }
+        .stats-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .key-stat {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            transition: transform 0.3s;
+        }
+        .key-stat:hover {
+            transform: translateY(-3px);
+            background-color: rgba(163, 194, 255, 0.2);
+        }
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .stat-icon i {
+            font-size: 18px;
+            color: #a3c2ff;
+        }
+        .stat-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #a3c2ff;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .jobs-section, .role-section {
+            background-color: rgba(163, 194, 255, 0.15);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .jobs-section:hover, .role-section:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #a3c2ff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 8px;
+        }
+        .section-title i {
+            margin-right: 8px;
+            font-size: 24px;
+        }
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .job-card {
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .job-card:hover {
+            transform: translateY(-3px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .job-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .job-icon i {
+            font-size: 16px;
+            color: #a3c2ff;
+        }
+        .job-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .role-tasks {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .task-item:hover {
+            transform: translateY(-3px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .task-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .task-icon i {
+            font-size: 16px;
+            color: #a3c2ff;
+        }
+        .task-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .footer {
+            padding: 12px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Entreprise NCI</h1>
+            </div>
+            <div class="content">
+                <div class="nci-definition">
+                    <h2 class="nci-title">
+                        <i class="material-icons">business</i>
+                        NCI Solutions
+                    </h2>
+                    <p class="nci-text">
+                        <strong>Entreprise spécialisée</strong> en infrastructures informatiques et services aux organisations
+                    </p>
+                    <p class="nci-text">
+                        <strong>Lieu d'alternance</strong> depuis juillet 2024 pour le BTS SIO option SISR
+                    </p>
+                    <p class="nci-text">
+                        <strong>Domaines d'expertise:</strong> Administration système, gestion de réseaux, cybersécurité et solutions cloud
+                    </p>
+                    
+                    <div class="stats-container">
+                        <div class="key-stat">
+                            <div class="stat-icon">
+                                <i class="material-icons">groups</i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">40+</div>
+                                <div class="stat-label">Salariés</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-container">
+                    <div class="jobs-section">
+                        <h2 class="section-title">
+                            <i class="material-icons">work</i>
+                            Métiers chez NCI
+                        </h2>
+                        <div class="jobs-grid">
+                            <div class="job-card">
+                                <div class="job-icon">
+                                    <i class="material-icons">storefront</i>
+                                </div>
+                                <h3 class="job-title">Commercial</h3>
+                            </div>
+                            
+                            <div class="job-card">
+                                <div class="job-icon">
+                                    <i class="material-icons">code</i>
+                                </div>
+                                <h3 class="job-title">Développeur Web</h3>
+                            </div>
+                            
+                            <div class="job-card">
+                                <div class="job-icon">
+                                    <i class="material-icons">visibility</i>
+                                </div>
+                                <h3 class="job-title">Supervision</h3>
+                            </div>
+                            
+                            <div class="job-card">
+                                <div class="job-icon">
+                                    <i class="material-icons">precision_manufacturing</i>
+                                </div>
+                                <h3 class="job-title">Production</h3>
+                            </div>
+                            
+                            <div class="job-card">
+                                <div class="job-icon">
+                                    <i class="material-icons">support_agent</i>
+                                </div>
+                                <h3 class="job-title">Support infrastructure</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="role-section">
+                        <h2 class="section-title">
+                            <i class="material-icons">person</i>
+                            Mon rôle
+                        </h2>
+                        <div class="role-tasks">
+                            <div class="task-item">
+                                <div class="task-icon">
+                                    <i class="material-icons">support_agent</i>
+                                </div>
+                                <h3 class="task-text">Assister les utilisateurs</h3>
+                            </div>
+                            
+                            <div class="task-item">
+                                <div class="task-icon">
+                                    <i class="material-icons">assignment</i>
+                                </div>
+                                <h3 class="task-text">Gérer les tickets</h3>
+                            </div>
+                            
+                            <div class="task-item">
+                                <div class="task-icon">
+                                    <i class="material-icons">build</i>
+                                </div>
+                                <h3 class="task-text">Maintenance du parc informatique</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations en Entreprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 32, 96, 0.85);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .header {
+            padding: 40px 70px 15px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #a3c2ff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .achievements-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .main-achievement {
+            flex: 1;
+            background-color: rgba(163, 194, 255, 0.15);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .main-achievement:hover {
+            transform: translateY(-5px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .achievement-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 15px;
+        }
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .achievement-icon i {
+            font-size: 32px;
+            color: #a3c2ff;
+        }
+        .achievement-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #a3c2ff;
+        }
+        .achievement-subtitle {
+            font-size: 18px;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+        .achievement-details {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .detail-item {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+        .detail-item i {
+            color: #a3c2ff;
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        .achievement-mission {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .achievement-mission strong {
+            color: #a3c2ff;
+        }
+        .skills-applied {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .skill-card {
+            background-color: rgba(163, 194, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-card:hover {
+            transform: translateY(-3px);
+            background-color: rgba(163, 194, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-icon i {
+            font-size: 20px;
+            color: #a3c2ff;
+        }
+        .skill-text {
+            font-size: 18px;
+        }
+        .skill-text strong {
+            color: #a3c2ff;
+        }
+        .footer {
+            padding: 15px 70px;
+            font-size: 16px;
+            color: #a3c2ff;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <div class="header">
+                <h1 class="title">Réalisations en Entreprise</h1>
+            </div>
+            <div class="content">
+                <div class="achievements-container">
+                    <div class="main-achievement">
+                        <div class="achievement-header">
+                            <div class="achievement-icon">
+                                <i class="material-icons">account_tree</i>
+                            </div>
+                            <div>
+                                <h2 class="achievement-title">Active Directory</h2>
+                                <div class="achievement-subtitle">Gestion de l'environnement</div>
+                            </div>
+                        </div>
+                        <div class="achievement-details">
+                            <div class="detail-item">
+                                <i class="material-icons">calendar_today</i>
+                                <span>Juillet 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="material-icons">people</i>
+                                <span>Administration des identités</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="material-icons">policy</i>
+                                <span>Stratégies de groupe</span>
+                            </div>
+                        </div>
+                        <div class="achievement-mission">
+                            <strong>Mission:</strong> Mise en place et administration de l'Active Directory pour la gestion centralisée des utilisateurs, des ordinateurs et des stratégies de groupe.
+                        </div>
+                    </div>
+                    
+                    <div class="main-achievement">
+                        <div class="achievement-header">
+                            <div class="achievement-icon">
+                                <i class="material-icons">dns</i>
+                            </div>
+                            <div>
+                                <h2 class="achievement-title">Baie Informatique</h2>
+                                <div class="achievement-subtitle">Optimisation de l'infrastructure</div>
+                            </div>
+                        </div>
+                        <div class="achievement-details">
+                            <div class="detail-item">
+                                <i class="material-icons">calendar_today</i>
+                                <span>Septembre 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="material-icons">storage</i>
+                                <span>Configuration des serveurs</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="material-icons">security</i>
+                                <span>Amélioration de la sécurité</span>
+                            </div>
+                        </div>
+                        <div class="achievement-mission">
+                            <strong>Mission:</strong> Projet de modernisation de la baie d'entreprise pour optimiser l'infrastructure et améliorer la sécurité des systèmes.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-applied">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="material-icons">account_tree</i>
+                        </div>
+                        <div class="skill-text">
+                            <strong>Gestion</strong> des utilisateurs
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="material-icons">policy</i>
+                        </div>
+                        <div class="skill-text">
+                            <strong>Stratégies</strong> de groupe
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="material-icons">storage</i>
+                        </div>
+                        <div class="skill-text">
+                            <strong>Serveurs</strong> et stockage
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="material-icons">security</i>
+                        </div>
+                        <div class="skill-text">
+                            <strong>Sécurité</strong> réseau
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="material-icons">backup</i>
+                        </div>
+                        <div class="skill-text">
+                            <strong>Sauvegarde</strong> et restauration
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>Mia Mortier - BTS SIO 2ème année</div>
+                <div>Présentation Orale</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
