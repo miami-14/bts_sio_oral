@@ -519,54 +519,61 @@
   transform: scale(1.08);
   transform-origin: center;
 }
-/* ====== AJUSTEMENT TAILLE (réduction maîtrisée) ====== */
+/* ====== AJUSTEMENT FINAL — SLIDE "ENTREPRISE NCI" ====== */
 
-/* 1) Réduire légèrement le titre des slides */
+/* 1) Réduction légère du titre */
 .title{
-  font-size: 44px; /* au lieu de 48px */
+  font-size: 42px;
 }
 
-/* 2) Réduire la taille globale des cartes */
+/* 2) Réduction de la largeur perçue des blocs */
 .card{
-  padding: 26px; /* au lieu de 32px */
+  padding: 22px;
   border-radius: 14px;
 }
 
-/* 3) Titres des cartes (NCI Solutions, Métiers, etc.) */
+/* 3) Titres de cartes */
 .card-title{
-  font-size: 24px; /* au lieu de 28px */
+  font-size: 22px;
 }
 
-/* 4) Texte interne (paragraphes) */
+/* 4) Texte descriptif */
 .card p,
 .card div{
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.45;
 }
 
-/* 5) Réduire légèrement les chips (Métiers, compétences) */
+/* 5) Réduction des blocs métiers */
 .chip{
-  padding: 10px 14px;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+/* 6) Icônes plus discrètes */
+.icon-badge{
+  width: 44px;
+  height: 44px;
+}
+.icon-badge .material-icons{
+  font-size: 22px;
+}
+
+/* 7) Bloc statistiques (40+ collaborateurs) */
+.stat{
   font-size: 16px;
 }
 
-/* 6) Icônes dans les badges */
-.icon-badge{
-  width: 46px;
-  height: 46px;
-}
-.icon-badge .material-icons{
-  font-size: 24px;
-}
-
-/* 7) Réduire les statistiques (40+ collaborateurs) */
-.stat strong{
-  font-size: 20px;
-}
-
-/* 8) Réduire l’espace vertical global */
+/* 8) Aération verticale maîtrisée */
 .content{
-  padding-bottom: 36px; /* au lieu de 50px */
+  padding-top: 10px;
+  padding-bottom: 28px;
+}
+
+/* 9) Réduction globale UNIQUEMENT sur cette slide */
+.slide[aria-label="Entreprise NCI"]{
+  transform: scale(0.96);
+  transform-origin: center;
 }
 
 
