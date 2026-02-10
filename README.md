@@ -57,3 +57,13 @@ Ce projet a vocation à évoluer :
 - structuration plus avancée
 
 Il constitue une **base saine pour débuter en développement web**.
+
+## 📄 Accès au fichier HTML
+
+Le fichier principal de la présentation est accessible ici :
+
+- 🔹 **Page HTML en ligne (GitHub Pages)**  
+  👉 https://miami-14.github.io/presentation_oral/
+
+- 🔹 **Fichier HTML dans le dépôt GitHub**  
+  👉 https://github.com/miami-14/presentation_oral/blob/
