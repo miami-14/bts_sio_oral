@@ -461,6 +461,66 @@
       }
       .slide{ position: relative; }
     }
+
+    /* ====== ZOOM / AGRANDISSEMENT (à coller tout en bas du <style>) ====== */
+
+/* 1) Agrandir la grille 2 colonnes (Certifications) */
+.grid-2{
+  grid-template-columns: repeat(2, minmax(520px, 1fr));
+  gap: 32px; /* plus d’espace entre les cartes */
+}
+
+/* 2) Agrandir le titre principal des slides */
+.title{
+  font-size: 48px;  /* au lieu de 42px */
+}
+
+/* 3) Agrandir les cartes */
+.card{
+  padding: 32px;    /* au lieu de 24px */
+  border-radius: 16px; /* un peu plus premium */
+}
+
+/* 4) Titres de cartes (TryHackMe, CNIL, etc.) */
+.card-title{
+  font-size: 28px;  /* au lieu de 22px */
+}
+
+/* 5) Texte dans les cartes (lisibilité soutenance) */
+.card p,
+.card div{
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* 6) Agrandir la zone image (preuve de certification) */
+.img-slot{
+  height: 260px; /* au lieu de 180px */
+}
+
+/* 7) Agrandir le contenu du placeholder image */
+.img-slot .hint{
+  font-size: 18px;
+}
+.img-slot .hint .material-icons{
+  font-size: 52px;
+}
+
+/* 8) Tags (RGPD, Web Security, etc.) */
+.tag{
+  font-size: 16px;
+  padding: 8px 14px;
+}
+.tag .material-icons{
+  font-size: 18px;
+}
+
+.deck{
+  transform: scale(1.08);
+  transform-origin: center;
+}
+
+
   </style>
 </head>
 
