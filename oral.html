@@ -276,7 +276,7 @@
               <div class="icon-badge"><span class="material-icons">settings</span></div>
               <h2 class="card-title">Cœur de métier</h2>
             </div>
-            <p style="font-size:15px; margin-top: 10px; color: rgba(255,255,255,0.9);">Infogérance, Cloud et Cybersécurité.</p>
+            <p style="font-size:15px; margin-top: 10px; color: rgba(255,255,255,0.9);">Info gérance, Cloud et Cybersécurité.</p>
           </article>
 
           <article class="card" style="border: 2px solid var(--accent, #007bff);">
@@ -415,6 +415,220 @@
   </section>
 
 </main>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan et perspectives - Mia Mortier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #001b4d;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 32, 96, 0.95) 0%, rgba(0, 32, 96, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding: 50px 70px 30px;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background-color: #a3c2ff;
+            border-radius: 2px;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 0 70px;
+            display: flex;
+            align-items: center;
+        }
+        .perspectives-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            width: 100%;
+        }
+        .perspectives-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(163, 194, 255, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .perspectives-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(163, 194, 255, 0.1);
+            border-color: #a3c2ff;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(163, 194, 255, 0.3);
+            padding-bottom: 15px;
+        }
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background-color: rgba(163, 194, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .card-icon i {
+            font-size: 32px;
+            color: #a3c2ff;
+        }
+        .card-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3c2ff;
+        }
+        .card-list {
+            list-style: none;
+        }
+        .card-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        .card-item i {
+            color: #a3c2ff;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        .card-item strong {
+            color: #ffffff;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        .footer {
+            padding: 30px 70px;
+            font-size: 18px;
+            color: rgba(163, 194, 255, 0.7);
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(163, 194, 255, 0.1);
+        }
+    </style>
+</head>
+
+  <!-- ===================== SLIDE 11 — Bilan  ===================== -->
+
+<body>
+    <div class="slide">
+        <div class="overlay">
+            <header class="header">
+                <h1 class="title">Bilan et perspectives</h1>
+            </header>
+
+            <div class="content">
+                <div class="perspectives-container">
+                    
+                    <div class="perspectives-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">school</i>
+                            </div>
+                            <h2 class="card-title">Bilan de formation</h2>
+                        </div>
+                        <div class="card-content">
+                            <ul class="card-list">
+                                <li class="card-item">
+                                    <i class="material-icons">verified</i>
+                                    <div><strong>Acquis techniques</strong> : Admin. systèmes et réseaux</div>
+                                </li>
+                                <li class="card-item">
+                                    <i class="material-icons">verified</i>
+                                    <div><strong>Compétences</strong> : Cybersécurité et virtualisation</div>
+                                </li>
+                                <li class="card-item">
+                                    <i class="material-icons">verified</i>
+                                    <div><strong>Certifications</strong> : CCNA & SecNumAcadémie</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="perspectives-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="material-icons">rocket_launch</i>
+                            </div>
+                            <h2 class="card-title">Objectifs Professionnels</h2>
+                        </div>
+                        <div class="card-content">
+                            <ul class="card-list">
+                                <li class="card-item">
+                                    <i class="material-icons">computer</i>
+                                    <div>Administrateur système et réseaux</div>
+                                </li>
+                                <li class="card-item">
+                                    <i class="material-icons">leaderboard</i>
+                                    <div>Chef de projet technique</div>
+                                </li>
+                                <li class="card-item">
+                                    <i class="material-icons">shield</i>
+                                    <div>Consultant en cybersécurité</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div><strong>Mia Mortier</strong> — BTS SIO 2ème année</div>
+                <div>Présentation Orale 2025</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
 
 <script>
   const slides = document.querySelectorAll('.slide');
