@@ -27,6 +27,45 @@
       height: 100vh; overflow: hidden; color: var(--text);
     }
 
+    /* Conteneur spécifique pour le logo */
+.logo-box {
+  height: 120px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Style des tags (badges) sous le logo */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
+}
+
+.tag {
+  background: rgba(178, 209, 255, 0.2);
+  color: #b2d1ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(178, 209, 255, 0.3);
+}
+
     .deck {
       width: var(--w); height: var(--h); position: relative;
       background: #222; border-radius: 18px; overflow: hidden;
@@ -92,6 +131,7 @@
   </style>
 </head>
 <body>
+      <!-- ===================== SLIDE -1 — Présentation personnelle ===================== -->
 
 <main class="deck">
   <div class="counter" id="counter">Slide 1 / 11</div>
@@ -111,6 +151,8 @@
       </div>
     </div>
   </section>
+
+      <!-- ===================== SLIDE 0 — Sommaire ===================== -->
 
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')">
     <div class="overlay">
@@ -138,6 +180,8 @@
     </div>
   </section>
 
+    <!-- ===================== SLIDE 1 — Présentation personnelle ===================== -->
+
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')">
     <div class="overlay">
       <h1 class="title">01. Présentation personnelle</h1>
@@ -159,6 +203,8 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== SLIDE 2 — Réalisations en formation ===================== -->
 
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')">
     <div class="overlay">
@@ -182,6 +228,8 @@
     </div>
   </section>
 
+  <!-- ===================== SLIDE 3 — Certifications (1/2) ===================== -->
+
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
     <div class="overlay">
       <h1 class="title">03. Certifications (1/2)</h1>
@@ -201,6 +249,9 @@
       </div>
     </div>
   </section>
+
+<!-- ===================== SLIDE 3 — Certifications (2/2) ===================== -->
+
 
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
     <div class="overlay">
@@ -222,7 +273,10 @@
     </div>
   </section>
 
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/a4bb91bf9308.jpg')">
+<!-- ===================== SLIDE 4 — L'entreprise NCI Solutions ===================== -->
+
+
+<section class="slide">
   <div class="overlay">
     <header class="header">
       <h1 class="title">04. L'entreprise NCI Solutions</h1>
@@ -237,45 +291,48 @@
             <h2 class="card-title">Identité de la structure</h2>
           </div>
           
-          <div style="height: 100px; background: white; border-radius: 8px; display: flex; justify-content: center; align-items: center; margin-bottom: 15px; padding: 10px; overflow: hidden;">
-            <img src="Image/2026-02-11 10_15_23-nci informatique caen at DuckDuckGo - DuckDuckGo.png" 
-                 alt="Logo NCI" 
-                 style="max-height: 100%; max-width: 100%; object-fit: contain;">
+          <div class="logo-box">
+            <img src="Image/2026-02-11%2010_15_23-nci%20informatique%20caen%20at%20DuckDuckGo%20-%20DuckDuckGo.png" 
+                 alt="Logo NCI Solutions">
           </div>   
 
-          <ul class="list" style="font-size: 16px; list-style: none; padding: 0;">
-            <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;"><span class="material-icons">groups</span> <strong>Effectif :</strong> +40 collaborateurs</li>
-            <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;"><span class="material-icons">info</span> <strong>Type :</strong> ESN</li>
-            <li style="display: flex; align-items: center; gap: 8px;"><span class="material-icons">public</span> <strong>Clients :</strong> PME, PMI & Collectivités</li>
+          <ul class="list">
+            <li><span class="material-icons">groups</span> <div><strong>Effectif :</strong> +40 collaborateurs</div></li>
+            <li><span class="material-icons">info</span> <div><strong>Type :</strong> ESN (Entreprise de Services du Numérique)</div></li>
+            <li><span class="material-icons">public</span> <div><strong>Clients :</strong> PME, PMI & Collectivités</div></li>
           </ul>
 
-          <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-              <span class="tag">Ingénieur Production</span>
-              <span class="tag">Commercial</span>
-              <span class="tag">Développeur</span>
-              <span class="tag">Admin Microsoft</span>
-              <span class="tag">Hotline</span>
-            </div>
+          <div class="tag-container">
+            <span class="tag">Ingénieur Production</span>
+            <span class="tag">Commercial</span>
+            <span class="tag">Développeur</span>
+            <span class="tag">Admin Microsoft</span>
+            <span class="tag">Hotline</span>
           </div>
         </article>
 
-        <div style="display: flex; flex-direction: column; gap: 15px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
           
           <article class="card">
             <div class="card-header">
               <div class="icon-badge"><span class="material-icons">settings</span></div>
               <h2 class="card-title">Cœur de métier</h2>
             </div>
-            <p style="font-size:15px; margin-top: 10px; color: rgba(255,255,255,0.9);">Infogérance, Cloud et Cybersécurité.</p>
+            <p style="font-size:18px; margin-top: 15px; color: #e0e0e0; line-height: 1.6;">
+              Infogérance, Cloud et Cybersécurité.
+            </p>
           </article>
 
-          <article class="card" style="border: 2px solid var(--accent, #007bff);">
+          <article class="card" style="border-left: 5px solid var(--accent);">
             <div class="card-header">
-              <div class="icon-badge" style="background: var(--accent, #007bff);"><span class="material-icons">person</span></div>
+              <div class="icon-badge" style="background: var(--accent); color: #002b80;">
+                <span class="material-icons">person</span>
+              </div>
               <h2 class="card-title">Mon positionnement</h2>
             </div>
-            <p style="margin-top: 10px; font-size: 16px;"><strong>Technicienne Systèmes et Réseaux</strong></p>
+            <p style="margin-top: 15px; font-size: 20px;">
+              <strong>Technicienne Systèmes et Réseaux</strong>
+            </p>
           </article>
           
         </div>
@@ -283,33 +340,27 @@
       </div>
     </div>
 
-    <div class="footer">
+    <footer class="footer">
       <span>Mia Mortier — BTS SIO 2025</span>
-      <span>NCI Solutions : +40 salariés</span>
-    </div>
+      <span>NCI Solutions : Caen & Environs</span>
+    </footer>
   </div>
 </section>
 
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+<!-- ===================== SLIDE 5 — Rôles & Expertises métier ===================== -->
 
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
   <div class="overlay">
 
-    <h1 class="title">06. Rôles & Expertises métier</h1>
 
+    <h1 class="title">05. Rôles & Expertises métier</h1>
     <div class="content">
-
       <div class="grid grid-2">
 
-       
-
         <div style="display: flex; flex-direction: column; gap: 15px;">
-
           <div class="card">
-
             <h2 class="card-title"><span class="material-icons">engineering</span>Ingénieur Production</h2>
-
             <p style="font-size: 15px; margin:0;">Garant de la disponibilité des services. Il gère la mise en exploitation des serveurs et l'automatisation des tâches complexes.</p>
-
           </div>
 
           <div class="card">
@@ -327,48 +378,34 @@
 
 
         <div style="display: flex; flex-direction: column; gap: 15px;">
-
           <div class="card">
             <h2 class="card-title"><span class="material-icons">headset_mic</span>Hotline & TSR</h2>
             <p style="font-size: 15px; margin:0;">Assurent le support N1/N2. Résolution d'incidents, déploiement de postes et maintenance de proximité (mon pôle actuel).</p>
-
           </div>
 
           <div class="card">
-
             <h2 class="card-title"><span class="material-icons">payments</span>Commercial</h2>
-
             <p style="font-size: 15px; margin:0;">Analyse les besoins des entreprises pour proposer des contrats de services et des solutions d'infrastructure adaptées.</p>
-
           </div>
-
           <div class="card" style="background: rgba(178, 209, 255, 0.2); border: 2px solid var(--accent);">
-
             <h2 class="card-title" style="color: white;"><span class="material-icons">sync_alt</span>Collaboration</h2>
-
             <p style="font-size: 15px; margin:0;">Une interaction constante entre les pôles pour garantir un service client performant et sécurisé.</p>
-
           </div>
-
         </div>
-
-
-
       </div>
-
     </div>
 
     <footer class="footer">
-
       <span>Mia Mortier — Organisation de l'équipe</span>
-
       <span>NCI Solutions</span>
-
     </footer>
 
   </div>
 
 </section>
+
+<!-- ===================== SLIDE 6 — Réalisations en entreprise ===================== -->
+
 
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
     <div class="overlay">
@@ -394,6 +431,8 @@
     </div>
   </section>
 
+  <!-- ===================== SLIDE 7 — Veille technologique ===================== -->
+
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
     <div class="overlay">
       <h1 class="title">07. Veille technologique</h1>
@@ -408,6 +447,7 @@
     </div>
   </section>
 
+<!-- ===================== SLIDE 8 — Bilan et perspectives ===================== -->
 <section class="slide" style="background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');">
     <div class="overlay">
         <h1 class="title">08. Bilan et perspectives</h1>
