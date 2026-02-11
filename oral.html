@@ -11,7 +11,7 @@
 
   <style>
     :root {
-      --bg-navy: rgba(0, 43, 128, 0.85); 
+      --bg-navy: rgba(0, 43, 128, 0.9); 
       --accent: #b2d1ff;
       --text: #ffffff;
       --radius: 12px;
@@ -19,9 +19,10 @@
       --h: 720px;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body {
-      margin: 0; font-family: "Source Sans Pro", sans-serif;
+      font-family: "Source Sans Pro", sans-serif;
       background: #1a1a1a; display: grid; place-items: center;
       height: 100vh; overflow: hidden; color: var(--text);
     }
@@ -36,7 +37,8 @@
       position: absolute; inset: 0; display: none;
       background-size: cover; background-position: center;
     }
-    .slide.is-active { display: block; animation: fadeIn 0.4s; }
+    .slide.is-active { display: flex; flex-direction: column; animation: fadeIn 0.4s; }
+    
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     .overlay {
@@ -46,74 +48,71 @@
     }
 
     .title {
-      font-size: 48px; font-weight: 700; margin: 0 0 20px;
+      font-size: 44px; font-weight: 700; margin: 0 0 20px;
       border-bottom: 5px solid var(--accent); display: inline-block;
     }
 
-    .content { flex: 1; display: flex; align-items: center; }
+    .content { flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; }
 
+    /* Grilles */
     .grid { display: grid; gap: 20px; width: 100%; }
     .grid-2 { grid-template-columns: 1fr 1fr; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-    .card {
-      background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255,255,255,0.2);
-      border-radius: var(--radius); padding: 20px; height: 100%;
+    /* Cartes standards */
+    .card { 
+      background: rgba(255, 255, 255, 0.1); 
+      border: 1px solid rgba(255,255,255,0.2); 
+      border-radius: var(--radius); 
+      padding: 25px; 
+      backdrop-filter: blur(5px);
     }
-
-    .card-title { color: var(--accent); font-size: 22px; margin: 0 0 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .card-title { color: var(--accent); font-size: 24px; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
     
-    .list { list-style: none; padding: 0; margin: 0; }
-    .list li { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 17px; }
-    .list .material-icons { color: var(--accent); font-size: 20px; }
+    /* Listes */
+    .list { list-style: none; }
+    .list li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 18px; }
+    .list .material-icons { color: var(--accent); }
 
-    .tag {
-      display: inline-block; padding: 4px 10px; border-radius: 5px;
-      background: var(--accent); color: #002b80; font-weight: 700; font-size: 12px; margin: 2px;
+    /* Styles spécifiques (Bilan & Perspectives) */
+    .card-icon-alt { 
+      width: 50px; height: 50px; border-radius: 12px; background: rgba(163, 194, 255, 0.2);
+      display: flex; justify-content: center; align-items: center; margin-right: 15px;
     }
+    .card-icon-alt i { font-size: 28px; color: #a3c2ff; }
 
-    .img-slot {
-      background: white; border-radius: 8px; height: 100px;
-      display: grid; place-items: center; margin-top: 10px; color: #002b80;
-    }
-
+    /* Contrôles & UI */
     .controls { position: absolute; bottom: 20px; left: 70px; display: flex; gap: 10px; z-index: 100; }
-    .btn {
-      background: rgba(0,0,0,0.5); border: 1px solid var(--accent); color: white;
-      padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px;
-    }
+    .btn { background: rgba(0,0,0,0.5); border: 1px solid var(--accent); color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; }
     .btn:hover { background: var(--accent); color: black; }
-    .counter { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.6); padding: 8px 15px; border-radius: 20px; color: var(--accent); font-weight: bold; }
-    
-    .footer { margin-top: 20px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; color: var(--accent); display: flex; justify-content: space-between; }
+    .counter { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.6); padding: 8px 15px; border-radius: 20px; color: var(--accent); font-weight: bold; z-index: 100; }
+    .footer { margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 16px; color: var(--accent); display: flex; justify-content: space-between; }
+    .tag { display: inline-block; padding: 4px 10px; background: var(--accent); color: #002b80; border-radius: 5px; font-weight: 700; font-size: 12px; margin: 2px; }
+    .img-slot { background: white; border-radius: 8px; height: 100px; display: grid; place-items: center; margin-top: 10px; color: #002b80; overflow: hidden; }
   </style>
 </head>
 <body>
 
-<!-- ===================== SLIDE 1 — Bilan ===================== -->
-
-
 <main class="deck">
-  <div class="counter" id="counter">Slide 1 / 9</div>
+  <div class="counter" id="counter">Slide 1 / 11</div>
   
   <div class="controls">
     <button class="btn" id="prevBtn"><span class="material-icons">chevron_left</span></button>
     <button class="btn" id="nextBtn"><span class="material-icons">chevron_right</span></button>
   </div>
 
-  <section class="slide is-active" style="background-image:url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg')">
+<section class="slide is-active" style="background-image:url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg')">
     <div class="overlay" style="justify-content:center; align-items:center; text-align:center;">
-      <h1 style="font-size: 60px;">BTS SIO 2025</h1>
-      <h2 style="color: var(--accent); font-weight: 400; font-size: 30px;">Services Informatiques aux Organisations</h2>
-      <div class="card" style="margin-top: 40px; height: auto;">
-        <strong style="font-size: 24px;">MIA MORTIER</strong><br>Option SISR en Alternance
+      <h1 style="font-size: 70px; margin-bottom: 10px;">BTS SIO 2025</h1>
+      <h2 style="color: var(--accent); font-weight: 400; font-size: 32px; margin-bottom: 40px;">Services Informatiques aux Organisations</h2>
+      <div class="card" style="width: 450px; background: rgba(0,0,0,0.5);">
+        <strong style="font-size: 32px; color: var(--accent);">MIA MORTIER</strong><br>
+        <p style="font-size: 20px; margin-top: 10px;">Option SISR en Alternance</p>
       </div>
     </div>
   </section>
 
- <!-- ===================== SLIDE 2 — Sommaire ===================== -->
- 
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')">
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')">
     <div class="overlay">
       <h1 class="title">Sommaire</h1>
       <div class="content">
@@ -123,24 +122,23 @@
               <li><span class="material-icons">person</span> 01. Présentation personnelle</li>
               <li><span class="material-icons">school</span> 02. Réalisations en formation</li>
               <li><span class="material-icons">workspace_premium</span> 03. Certifications</li>
-              <li><span class="material-icons">business</span> 04. Entreprise NCI</li>
+              <li><span class="material-icons">business</span> 04. Entreprise NCI Solutions</li>
             </ul>
           </div>
           <div class="card">
             <ul class="list">
               <li><span class="material-icons">work</span> 05. Réalisations en entreprise</li>
-              <li><span class="material-icons">trending_up</span> 06. Veille technologique</li>
-              <li><span class="material-icons">assessment</span> 07. Bilan & Perspectives</li>
+              <li><span class="material-icons">engineering</span> 06. Rôles & Expertises métier</li>
+              <li><span class="material-icons">trending_up</span> 07. Veille technologique</li>
+              <li><span class="material-icons">assessment</span> 08. Bilan & Perspectives</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-<!-- ===================== SLIDE 3  — Présentation personnelle ===================== -->
 
-
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')">
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')">
     <div class="overlay">
       <h1 class="title">01. Présentation personnelle</h1>
       <div class="content">
@@ -148,23 +146,21 @@
           <div class="card">
             <h2 class="card-title"><span class="material-icons">badge</span>Mon Parcours</h2>
             <ul class="list">
-              <li><strong>Diplôme actuel :</strong> BTS SIO SISR (Bac+2)</li>
+              <li><strong>Diplôme :</strong> BTS SIO SISR</li>
               <li><strong>Origine :</strong> Bac STMG Option SIG</li>
               <li><strong>Profil :</strong> Technicienne en alternance</li>
             </ul>
           </div>
           <div class="card">
-            <h2 class="card-title"><span class="material-icons">psychology</span>Pourquoi le SISR ?</h2>
-            <p>Passion pour la gestion des infrastructures, le dépannage réseau et la sécurisation des données en environnement professionnel.</p>
+            <h2 class="card-title"><span class="material-icons">psychology</span>Motivation</h2>
+            <p style="font-size: 18px; line-height: 1.6;">Passion pour la gestion des infrastructures critiques, le dépannage réseau et la sécurisation des données en entreprise.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SLIDE 4 — Réalisations en formation ===================== -->
-
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')">
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')">
     <div class="overlay">
       <h1 class="title">02. Réalisations en formation</h1>
       <div class="content">
@@ -179,384 +175,136 @@
           </div>
           <div class="card">
             <h2 class="card-title">Sécurité</h2>
-            <ul class="list"><li>Audit / Supervision</li><li>Sauvegardes</li></ul>
+            <ul class="list"><li>Audit</li><li>Sauvegardes</li></ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SLIDE 5 — Certifications (1/2) ===================== -->
-
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
     <div class="overlay">
       <h1 class="title">03. Certifications (1/2)</h1>
       <div class="content">
         <div class="grid grid-2">
           <div class="card">
             <h2 class="card-title">TryHackMe</h2>
-            <div class="img-slot">Badge TryHackMe</div>
-            <p>Apprentissage de la cybersécurité pratique.</p>
+            <div class="img-slot">Badge Cyber-attaquant</div>
+            <p>Apprentissage pratique de la cybersécurité.</p>
           </div>
           <div class="card">
             <h2 class="card-title">MOOC CNIL</h2>
             <div class="img-slot">Attestation RGPD</div>
-            <p>Protection des données personnelles.</p>
+            <p>Maîtrise de la protection des données.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
- <!-- ===================== SLIDE 6 — Certifications (2/2) ===================== -->
- 
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
     <div class="overlay">
       <h1 class="title">03. Certifications (2/2)</h1>
       <div class="content">
         <div class="grid grid-2">
           <div class="card">
             <h2 class="card-title">Microsoft Azure</h2>
-            <div class="img-slot">AZ-900 Fundamentals</div>
-            <p>Maîtrise des fondamentaux du Cloud.</p>
+            <div class="img-slot">AZ-900</div>
+            <p>Fondamentaux des services Cloud.</p>
           </div>
           <div class="card">
             <h2 class="card-title">ANSSI</h2>
             <div class="img-slot">SecNumAcadémie</div>
-            <p>Hygiène informatique et cybersécurité.</p>
+            <p>Hygiène et sécurité informatique.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SLIDE 7 — L'entreprise NCI Solutions ===================== -->
 <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/a4bb91bf9308.jpg')">
-  <div class="overlay">
-    <header class="header">
-      <h1 class="title">04. L'entreprise NCI Solutions</h1>
-    </header>
-
-    <div class="content">
-      <div class="grid grid-2">
-
-        <article class="card">
-          <div class="card-header">
-            <div class="icon-badge"><span class="material-icons">business</span></div>
-            <h2 class="card-title">Identité de la structure</h2>
-          </div>
-          
-          <div style="height: 100px; background: white; border-radius: 8px; display: flex; justify-content: center; align-items: center; margin-bottom: 15px; padding: 10px; overflow: hidden;">
-            <img src="Image/2026-02-11 10_15_23-nci informatique caen at DuckDuckGo - DuckDuckGo.png" 
-                 alt="Logo NCI" 
-                 style="max-height: 100%; max-width: 100%; object-fit: contain;">
-          </div>   
-
-          <ul class="list" style="font-size: 16px; list-style: none; padding: 0;">
-            <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;"><span class="material-icons">groups</span> <strong>Effectif :</strong> +40 collaborateurs</li>
-            <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;"><span class="material-icons">info</span> <strong>Type :</strong> ESN</li>
-            <li style="display: flex; align-items: center; gap: 8px;"><span class="material-icons">public</span> <strong>Clients :</strong> PME, PMI & Collectivités</li>
-          </ul>
-
-          <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-              <span class="tag">Ingénieur Production</span>
-              <span class="tag">Commercial</span>
-              <span class="tag">Développeur</span>
-              <span class="tag">Admin Microsoft</span>
-              <span class="tag">Hotline</span>
-            </div>
-          </div>
-        </article>
-
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          
-          <article class="card">
-            <div class="card-header">
-              <div class="icon-badge"><span class="material-icons">settings</span></div>
-              <h2 class="card-title">Cœur de métier</h2>
-            </div>
-            <p style="font-size:15px; margin-top: 10px; color: rgba(255,255,255,0.9);">Info gérance, Cloud et Cybersécurité.</p>
-          </article>
-
-          <article class="card" style="border: 2px solid var(--accent, #007bff);">
-            <div class="card-header">
-              <div class="icon-badge" style="background: var(--accent, #007bff);"><span class="material-icons">person</span></div>
-              <h2 class="card-title">Mon positionnement</h2>
-            </div>
-            <p style="margin-top: 10px; font-size: 16px;"><strong>Technicienne Systèmes et Réseaux</strong></p>
-          </article>
-          
-        </div>
-
-      </div>
-    </div>
-
-    <div class="footer">
-      <span>Mia Mortier — BTS SIO 2025</span>
-      <span>NCI Solutions : +40 salariés</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SLIDE 8 — Rôles & Expertises métier ===================== -->
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
-  <div class="overlay">
-    <h1 class="title">06. Rôles & Expertises métier</h1>
-    <div class="content">
-      <div class="grid grid-2">
-        
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">engineering</span>Ingénieur Production</h2>
-            <p style="font-size: 15px; margin:0;">Garant de la disponibilité des services. Il gère la mise en exploitation des serveurs et l'automatisation des tâches complexes.</p>
-          </div>
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">cloud_done</span>Admin. Microsoft</h2>
-            <p style="font-size: 15px; margin:0;">Expert des solutions Azure et M365. Il configure les annuaires (AD), les politiques de sécurité et les messageries.</p>
-          </div>
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">code</span>Développeur</h2>
-            <p style="font-size: 15px; margin:0;">Conçoit des applications sur-mesure ou des scripts d'interconnexion pour répondre aux besoins spécifiques des clients.</p>
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">headset_mic</span>Hotline & TSR</h2>
-            <p style="font-size: 15px; margin:0;">Assurent le support N1/N2. Résolution d'incidents, déploiement de postes et maintenance de proximité (mon pôle actuel).</p>
-          </div>
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">payments</span>Commercial</h2>
-            <p style="font-size: 15px; margin:0;">Analyse les besoins des entreprises pour proposer des contrats de services et des solutions d'infrastructure adaptées.</p>
-          </div>
-          <div class="card" style="background: rgba(178, 209, 255, 0.2); border: 2px solid var(--accent);">
-            <h2 class="card-title" style="color: white;"><span class="material-icons">sync_alt</span>Collaboration</h2>
-            <p style="font-size: 15px; margin:0;">Une interaction constante entre les pôles pour garantir un service client performant et sécurisé.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <footer class="footer">
-      <span>Mia Mortier — Organisation de l'équipe</span>
-      <span>NCI Solutions</span>
-    </footer>
-  </div>
-</section>
-<!-- ===================== SLIDE 9 — Réalisations en entreprise ===================== -->
-
-
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
-  <div class="overlay">
-    <h1 class="title">05. Réalisations en entreprise</h1>
-    <div class="content">
-      <div class="grid grid-2">
-        
-        <div class="card">
-          <h2 class="card-title"><span class="material-icons">lan</span>Administration Active Directory</h2>
-          <ul class="list" style="font-size: 15px; margin-bottom: 15px;">
-            <li><span class="material-icons">check</span> <strong>Gestion des identités :</strong> Création d'utilisateurs et de groupes (UO).</li>
-            <li><span class="material-icons">check</span> <strong>Sécurisation (GPO) :</strong> Mise en place de stratégies de mots de passe et restrictions d'accès.</li>
-            <li><span class="material-icons">check</span> <strong>Maintenance :</strong> Gestion des droits d'accès aux partages réseaux.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Windows Server</span>
-            <span class="tag">GPO</span>
-            <span class="tag">Sécurité</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title"><span class="material-icons">router</span>Maintenance Infrastructure</h2>
-          <ul class="list" style="font-size: 15px; margin-bottom: 15px;">
-            <li><span class="material-icons">check</span> <strong>Audit & Étiquetage :</strong> Identification et repérage des liens réseau.</li>
-            <li><span class="material-icons">check</span> <strong>Optimisation :</strong> Remise au propre du brassage (câblage) pour la circulation d'air.</li>
-            <li><span class="material-icons">check</span> <strong>Déploiement :</strong> Remplacement et configuration de switches/bornes Wi-Fi.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Baie de brassage</span>
-            <span class="tag">Hardware</span>
-            <span class="tag">Réseau physique</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <footer class="footer">
-      <span>Mia Mortier — Compétences techniques SISR</span>
-      <span>NCI Solutions</span>
-    </footer>
-  </div>
-</section>
-
-  <!-- ===================== SLIDE 10 — Veille technologique ===================== -->
-
-  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
     <div class="overlay">
-      <h1 class="title">06. Veille technologique</h1>
+      <h1 class="title">04. L'entreprise NCI Solutions</h1>
+      <div class="content">
+        <div class="grid grid-2">
+          <article class="card">
+            <h2 class="card-title"><span class="material-icons">business</span>Identité</h2>
+            <div class="img-slot">
+                <img src="Image/2026-02-11 10_15_23-nci informatique caen at DuckDuckGo - DuckDuckGo.png" alt="Logo NCI" style="max-height:80px;">
+            </div>
+            <ul class="list">
+              <li><span class="material-icons">groups</span> <strong>Effectif :</strong> +40 collaborateurs</li>
+              <li><span class="material-icons">public</span> <strong>Type :</strong> ESN</li>
+            </ul>
+          </article>
+          <div class="card" style="border: 2px solid var(--accent);">
+            <h2 class="card-title"><span class="material-icons">person</span>Mon Rôle</h2>
+            <p style="font-size: 20px;"><strong>Technicienne Systèmes et Réseaux</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+    <div class="overlay">
+      <h1 class="title">05. Rôles & Expertises métier</h1>
+      <div class="content">
+        <div class="grid grid-3">
+          <div class="card">
+            <h2 class="card-title"><span class="material-icons">engineering</span>Ingénieur</h2>
+            <p>Automatisation et mise en exploitation.</p>
+          </div>
+          <div class="card">
+            <h2 class="card-title"><span class="material-icons">cloud_done</span>Admin MS</h2>
+            <p>Gestion Azure, M365 et AD.</p>
+          </div>
+          <div class="card">
+            <h2 class="card-title"><span class="material-icons">headset_mic</span>Support</h2>
+            <p>Hotline et déploiement terrain (mon pôle).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+    <div class="overlay">
+      <h1 class="title">06. Réalisations en entreprise</h1>
       <div class="content">
         <div class="grid grid-2">
           <div class="card">
-            <h2 class="card-title">Outils de veille</h2>
+            <h2 class="card-title">Active Directory</h2>
             <ul class="list">
-              <li><span class="material-icons">rss_feed</span> Flux RSS (Feedly)</li>
-              <li><span class="material-icons">security</span> ANSSI / CERT-FR</li>
+              <li><span class="material-icons">check</span> Gestion des GPO</li>
+              <li><span class="material-icons">check</span> Maintenance des identités</li>
             </ul>
           </div>
           <div class="card">
-            <h2 class="card-title">Sujet : Ransomwares</h2>
-            <p>Évolution des menaces et stratégies de sauvegarde immuable (3-2-1-1-0).</p>
-            <div class="img-slot">Schéma Sauvegarde</div>
+            <h2 class="card-title">Infrastructure</h2>
+            <ul class="list">
+              <li><span class="material-icons">check</span> Audit de baies de brassage</li>
+              <li><span class="material-icons">check</span> Déploiement matériel</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-</main>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilan et perspectives - Mia Mortier</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            background-color: #001b4d;
-            color: #ffffff;
-            overflow: hidden;
-        }
-        .slide {
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-            background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 32, 96, 0.95) 0%, rgba(0, 32, 96, 0.8) 100%);
-            display: flex;
-            flex-direction: column;
-        }
-        .header {
-            padding: 50px 70px 30px;
-        }
-        .title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #ffffff;
-            position: relative;
-            display: inline-block;
-        }
-        .title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 120px;
-            height: 5px;
-            background-color: #a3c2ff;
-            border-radius: 2px;
-        }
-        .content {
-            flex-grow: 1;
-            padding: 0 70px;
-            display: flex;
-            align-items: center;
-        }
-        .perspectives-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            width: 100%;
-        }
-        .perspectives-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(163, 194, 255, 0.2);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        .perspectives-card:hover {
-            transform: translateY(-10px);
-            background-color: rgba(163, 194, 255, 0.1);
-            border-color: #a3c2ff;
-        }
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(163, 194, 255, 0.3);
-            padding-bottom: 15px;
-        }
-        .card-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 12px;
-            background-color: rgba(163, 194, 255, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 20px;
-        }
-        .card-icon i {
-            font-size: 32px;
-            color: #a3c2ff;
-        }
-        .card-title {
-            font-size: 28px;
-            font-weight: 600;
-            color: #a3c2ff;
-        }
-        .card-list {
-            list-style: none;
-        }
-        .card-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 20px;
-            line-height: 1.4;
-        }
-        .card-item i {
-            color: #a3c2ff;
-            margin-right: 15px;
-            font-size: 24px;
-        }
-        .card-item strong {
-            color: #ffffff;
-            font-weight: 600;
-            margin-right: 5px;
-        }
-        .footer {
-            padding: 30px 70px;
-            font-size: 18px;
-            color: rgba(163, 194, 255, 0.7);
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid rgba(163, 194, 255, 0.1);
-        }
-    </style>
-</head>
-
-  <!-- ===================== SLIDE 11 — Bilan  ===================== -->
+<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+    <div class="overlay">
+      <h1 class="title">07. Veille technologique</h1>
+      <div class="content">
+        <div class="card" style="width: 80%;">
+          <h2 class="card-title"><span class="material-icons">security</span>Sujet : Les Ransomwares</h2>
+          <p style="font-size: 18px; margin-bottom: 20px;">Protection contre l'exfiltration et le chiffrement de données.</p>
+          
+          <p style="margin-top: 15px;">Focus : Stratégie de sauvegarde immuable **3-2-1-1-0**.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <section class="slide" style="background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');">
     <div class="overlay">
