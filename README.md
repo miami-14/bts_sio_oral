@@ -23,12 +23,13 @@ Il a été conçu dans un cadre **pédagogique**, avec une structure volontairem
 ---
 
 ## 📂 Structure du projet
+https://miami-14.github.io/bts_sio_oral/oral.html
+
 ---
 
 ## 🌐 Accès au site en ligne
 
 Le site est accessible à l’adresse suivante :  
-👉 **https://miami-14.github.io/presentation_oral/**
 
 ---
 
