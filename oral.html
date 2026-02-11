@@ -558,30 +558,36 @@
 
   <!-- ===================== SLIDE 11 — Bilan  ===================== -->
 
-   <section class="slide" style="background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');">
+<section class="slide" style="background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');">
     <div class="overlay">
         <h1 class="title">08. Bilan et perspectives</h1>
         <div class="content">
             <div class="grid grid-2">
                 <div class="card">
-                    <h2 class="card-title"><span class="material-icons">school</span>Bilan</h2>
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div class="card-icon-alt"><i class="material-icons">school</i></div>
+                        <h2 style="font-size:24px; color:#a3c2ff;">Bilan de formation</h2>
+                    </div>
                     <ul class="list">
-                        <li><span class="material-icons">verified</span> <strong>Acquis</strong> : Systèmes & Réseaux</li>
-                        <li><span class="material-icons">verified</span> <strong>Certifs</strong> : CCNA / ANSSI</li>
+                        <li><i class="material-icons">verified</i> <div><strong>Acquis</strong> : Systèmes & Réseaux</div></li>
+                        <li><i class="material-icons">verified</i> <div><strong>Certifs</strong> : CCNA & ANSSI</div></li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h2 class="card-title"><span class="material-icons">rocket_launch</span>Perspectives</h2>
+                    <div style="display:flex; align-items:center; margin-bottom:15px;">
+                        <div class="card-icon-alt"><i class="material-icons">trending_up</i></div>
+                        <h2 style="font-size:24px; color:#a3c2ff;">Perspectives</h2>
+                    </div>
                     <ul class="list">
-                        <li><span class="material-icons">computer</span> Admin. Systèmes</li>
-                        <li><span class="material-icons">shield</span> Consultant Cyber</li>
+                        <li><i class="material-icons">computer</i> <div>Admin. Systèmes & Réseaux</div></li>
+                        <li><i class="material-icons">shield</i> <div>Expert Cybersécurité</div></li>
                     </ul>
                 </div>
             </div>
         </div>
         <footer class="footer">
-            <span>Mia Mortier — BTS SIO 2025</span>
-            <span>Présentation Orale</span>
+            <span><strong>Mia Mortier</strong> — BTS SIO 2025</span>
+            <span>Présentation de fin de cycle</span>
         </footer>
     </div>
   </section>
@@ -601,9 +607,10 @@
 
   document.getElementById('nextBtn').onclick = () => { if(current < slides.length-1){ current++; show(current); } };
   document.getElementById('prevBtn').onclick = () => { if(current > 0){ current--; show(current); } };
+  
   window.onkeydown = (e) => { 
-    if(e.key === "ArrowRight") document.getElementById('nextBtn').onclick();
-    if(e.key === "ArrowLeft") document.getElementById('prevBtn').onclick();
+    if(e.key === "ArrowRight" || e.key === " ") document.getElementById('nextBtn').click();
+    if(e.key === "ArrowLeft") document.getElementById('prevBtn').click();
   };
 </script>
 
