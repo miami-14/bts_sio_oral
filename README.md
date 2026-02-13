@@ -1,12 +1,9 @@
-<img width="882" height="707" alt="image" src="https://github.com/user-attachments/assets/b9d82d96-a77d-4e8c-9b11-267d405e5ab0" /># 📢 Présentation orale – Projet HTML
-
 Ce dépôt contient un projet **HTML simple** destiné à servir de **support pour une présentation orale**.  
 Il a été conçu dans un cadre **pédagogique**, avec une structure volontairement claire et accessible.
 
 ---
 
 ## 🎯 Objectif du projet
-<img width="882" height="707" alt="image" src="https://github.com/user-attachments/assets/e29731d8-3f46-4310-acc0-d1f170af25cf" />
 
 - Créer une page web simple en HTML
 - Comprendre la structure de base d’un site web
