@@ -27,43 +27,24 @@
       height: 100vh; overflow: hidden; color: var(--text);
     }
 
-    /* Conteneur spécifique pour le logo */
-.logo-box {
-  height: 120px;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-}
+    .logo-box {
+      height: 120px; background: white; border-radius: 8px;
+      display: flex; justify-content: center; align-items: center;
+      margin-bottom: 20px; padding: 15px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
 
-.logo-box img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
+    .logo-box img { max-height: 100%; max-width: 100%; object-fit: contain; }
 
-/* Style des tags (badges) sous le logo */
-.tag-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 15px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 15px;
-}
+    .tag-container {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;
+    }
 
-.tag {
-  background: rgba(178, 209, 255, 0.2);
-  padding: 4px 10px; /* L'étoile a été supprimée ici */
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(178, 209, 255, 0.3);
-}
+    .tag {
+      background: rgba(178, 209, 255, 0.2); padding: 4px 10px;
+      border-radius: 4px; font-size: 12px; font-weight: 600;
+      border: 1px solid rgba(178, 209, 255, 0.3); color: var(--accent);
+    }
 
     .deck {
       width: var(--w); height: var(--h); position: relative;
@@ -92,55 +73,44 @@
 
     .content { flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; }
 
-    /* Grilles */
     .grid { display: grid; gap: 20px; width: 100%; }
     .grid-2 { grid-template-columns: 1fr 1fr; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-    /* Cartes standards */
     .card { 
       background: rgba(255, 255, 255, 0.1); 
       border: 1px solid rgba(255,255,255,0.2); 
       border-radius: var(--radius); 
-      padding: 25px; 
-      backdrop-filter: blur(5px);
+      padding: 25px; backdrop-filter: blur(5px);
     }
     .card-title { color: var(--accent); font-size: 24px; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
     
-    /* Listes */
     .list { list-style: none; }
     .list li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 18px; }
     .list .material-icons { color: var(--accent); }
 
-    /* Styles spécifiques (Bilan & Perspectives) */
-    .card-icon-alt { 
-      width: 50px; height: 50px; border-radius: 12px; background: rgba(163, 194, 255, 0.2);
-      display: flex; justify-content: center; align-items: center; margin-right: 15px;
-    }
-    .card-icon-alt i { font-size: 28px; color: #a3c2ff; }
-
-    /* Contrôles & UI */
     .controls { position: absolute; bottom: 20px; left: 70px; display: flex; gap: 10px; z-index: 100; }
     .btn { background: rgba(0,0,0,0.5); border: 1px solid var(--accent); color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; }
     .btn:hover { background: var(--accent); color: black; }
     .counter { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.6); padding: 8px 15px; border-radius: 20px; color: var(--accent); font-weight: bold; z-index: 100; }
     .footer { margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 16px; color: var(--accent); display: flex; justify-content: space-between; }
-    .tag { display: inline-block; padding: 4px 10px; background: var(--accent); color: #002b80; border-radius: 5px; font-weight: 700; font-size: 12px; margin: 2px; }
-    .img-slot { background: white; border-radius: 8px; height: 100px; display: grid; place-items: center; margin-top: 10px; color: #002b80; overflow: hidden; }
+    
+    table { width: 100%; border-collapse: collapse; color: white; }
+    th { background: var(--accent); color: #002b80; padding: 12px; }
+    td { padding: 10px; border: 1px solid rgba(255,255,255,0.1); }
   </style>
 </head>
 <body>
-      <!-- ===================== SLIDE -1 — Présentation personnelle ===================== -->
 
 <main class="deck">
-  <div class="counter" id="counter">Slide 1 / 11</div>
+  <div class="counter" id="counter">Slide 1 / 10</div>
   
   <div class="controls">
     <button class="btn" id="prevBtn"><span class="material-icons">chevron_left</span></button>
     <button class="btn" id="nextBtn"><span class="material-icons">chevron_right</span></button>
   </div>
 
-<section class="slide is-active" style="background-image:url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg')">
+  <section class="slide is-active" style="background-image:url('https://sfile.chatglm.cn/images-ppt/f8690d59cde7.jpg')">
     <div class="overlay" style="justify-content:center; align-items:center; text-align:center;">
       <h1 style="font-size: 70px; margin-bottom: 10px;">BTS SIO 2025</h1>
       <h2 style="color: var(--accent); font-weight: 400; font-size: 32px; margin-bottom: 40px;">Services Informatiques aux Organisations</h2>
@@ -151,9 +121,7 @@
     </div>
   </section>
 
-      <!-- ===================== SLIDE 0 — Sommaire ===================== -->
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')">
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/3a6982ac26e1.jpg')">
     <div class="overlay">
       <h1 class="title">Sommaire</h1>
       <div class="content">
@@ -171,7 +139,7 @@
               <li><span class="material-icons">work</span> 05. Rôles & Expertises métier</li>
               <li><span class="material-icons">engineering</span> 06. Réalisations en entreprise</li>
               <li><span class="material-icons">trending_up</span> 07. Veille technologique</li>
-              <li><span class="material-icons">assessment</span> 08. Bilan & Perspectives</li>
+              <li><span class="material-icons">assessment</span> 08. Bilan & Synthèse</li>
             </ul>
           </div>
         </div>
@@ -179,9 +147,7 @@
     </div>
   </section>
 
-    <!-- ===================== SLIDE 1 — Présentation personnelle ===================== -->
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')">
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/bf6334c63a5b.jpg')">
     <div class="overlay">
       <h1 class="title">01. Présentation personnelle</h1>
       <div class="content">
@@ -196,448 +162,173 @@
           </div>
           <div class="card">
             <h2 class="card-title"><span class="material-icons">psychology</span>Motivation</h2>
-            <p style="font-size: 18px; line-height: 1.6;">Passion pour la gestion des infrastructures critiques, le dépannage réseau et la sécurisation des données en entreprise.</p>
+            <p style="font-size: 18px; line-height: 1.6;">Passion pour la gestion des infrastructures critiques et la sécurisation des données.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SLIDE 2 — Réalisations en formation ===================== -->
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')">
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/28ce68993f9d.jpg')">
     <div class="overlay">
       <h1 class="title">02. Réalisations en formation</h1>
       <div class="content">
         <div class="grid grid-3">
-          <div class="card">
-            <h2 class="card-title">Réseaux</h2>
-            <ul class="list"><li>VLANs / Routage</li><li>VPN</li></ul>
-            <ul class="list"><li>FTP</li><li>LDAP</li></ul>
-
-          </div>
-          <div class="card">
-            <h2 class="card-title">Systèmes</h2>
-            <ul class="list"><li>Active Directory</li><li>Linux / Windows</li></ul>
-          </div>
-          <div class="card">
-            <h2 class="card-title">Cybersécurité</h2>
-            <ul class="list"><li>NAT</li><li>Sauvegardes</li><li>Pare-feu</li></ul>
-          </div>
+          <div class="card"><h2 class="card-title">Réseaux</h2><ul class="list"><li>VLANs / VPN</li><li>FTP / LDAP</li></ul></div>
+          <div class="card"><h2 class="card-title">Systèmes</h2><ul class="list"><li>Active Directory</li><li>Linux / Windows</li></ul></div>
+          <div class="card"><h2 class="card-title">Cybersécurité</h2><ul class="list"><li>Pare-feu</li><li>Sauvegardes</li></ul></div>
         </div>
       </div>
     </div>
   </section>
-  
 
-  <!-- ===================== SLIDE 3 — Certifications (1/2) ===================== -->
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
-  <div class="overlay">
-    <h1 class="title">03. Certifications (1/2)</h1>
-    <div class="content">
-      <div class="grid grid-1">
-        
-        <div class="card">
-          <h2 class="card-title">TryHackMe</h2>
-          
-          <div class="img-slot" style="display: flex; justify-content: center; align-items: center; height: 300px; padding: 10px; overflow: hidden;">
-            <img src="Image/Certificat_TryHackMe.png" 
-                 alt="Certificat TryHackMe" 
-                 style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-          </div>
-          
-          <p style="text-align: center; margin-top: 15px; font-weight: 500;">Apprentissage pratique de la cybersécurité.</p>
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
+    <div class="overlay">
+      <h1 class="title">03. Certifications</h1>
+      <div class="content">
+        <div class="grid grid-3">
+          <div class="card"><h2 class="card-title">TryHackMe</h2><p>Cybersécurité pratique</p></div>
+          <div class="card"><h2 class="card-title">Azure</h2><p>AZ-900 Fundamentals</p></div>
+          <div class="card"><h2 class="card-title">ANSSI</h2><p>SecNumAcadémie</p></div>
         </div>
-
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== SLIDE 3 — Certifications (2/2) ===================== -->
+  </section>
 
 
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
+      <!-- ===================== SLIDE -4 — Présentation personnelle ===================== -->
+
+
+  <section class="slide">
     <div class="overlay">
-      <h1 class="title">03. Certifications (2/2)</h1>
+      <h1 class="title">04. L'entreprise NCI Solutions</h1>
       <div class="content">
         <div class="grid grid-2">
-          <div class="card">
-            <h2 class="card-title">Microsoft Azure</h2>
-            <div class="img-slot">AZ-900</div>
-            <p>Fondamentaux des services Cloud.</p>
-          </div>
-          <div class="card">
-            <h2 class="card-title">ANSSI</h2>
-            <div class="img-slot">SecNumAcadémie</div>
-            <p>Hygiène et sécurité informatique.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- ===================== SLIDE 4 — L'entreprise NCI Solutions ===================== -->
-
-
-<section class="slide">
-  <div class="overlay">
-    <header class="header">
-      <h1 class="title">04. L'entreprise NCI Solutions</h1>
-    </header>
-
-    <div class="content">
-      <div class="grid grid-2">
-
-        <article class="card">
-          <div class="card-header">
-            <div class="icon-badge"><span class="material-icons">business</span></div>
-            <h2 class="card-title">Identité de la structure</h2>
-          </div>
-          
-          <div class="logo-box">
-            <img src="Image/2026-02-11%2010_15_23-nci%20informatique%20caen%20at%20DuckDuckGo%20-%20DuckDuckGo.png" alt="Logo NCI Solutions">
-          </div>   
-
-          <ul class="list">
-            <li><span class="material-icons">groups</span> <div><strong>Effectif :</strong> +40 collaborateurs</div></li>
-            <li><span class="material-icons">info</span> <div><strong>Type :</strong> ESN (Entreprise de Services du Numérique)</div></li>
-            <li><span class="material-icons">public</span> <div><strong>Clients :</strong> PME, PMI & Collectivités</div></li>
-          </ul>
-
-          <div class="tag-container">
-            <span class="tag">Ingénieur Production</span>
-            <span class="tag">Commercial</span>
-            <span class="tag">Développeur</span>
-            <span class="tag">Admin Microsoft</span>
-            <span class="tag">Hotline</span>
-          </div>
-        </article>
-
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          
           <article class="card">
-            <div class="card-header">
-              <div class="icon-badge"><span class="material-icons">settings</span></div>
-              <h2 class="card-title">Cœur de métier</h2>
+            <div class="logo-box"><img src="Image/2026-02-11%2010_15_23-nci%20informatique%20caen%20at%20DuckDuckGo%20-%20DuckDuckGo.png" alt="Logo NCI"></div>
+            <ul class="list">
+              <li><span class="material-icons">groups</span> +40 collaborateurs</li>
+              <li><span class="material-icons">info</span> ESN</li>
+            </ul>
+            <div class="tag-container">
+              <span class="tag">Admin MS</span><span class="tag">Hotline</span><span class="tag">Prod</span>
             </div>
-            <p style="font-size:18px; margin-top: 15px; color: #e0e0e0; line-height: 1.6;">
-              Infogérance, Cloud et Cybersécurité.
-            </p>
           </article>
-
           <article class="card" style="border-left: 5px solid var(--accent);">
-            <div class="card-header">
-              <div class="icon-badge" style="background: var(--accent); color: #002b80;">
-                <span class="material-icons">person</span>
-              </div>
-              <h2 class="card-title">Mon positionnement</h2>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-              <p style="font-size: 20px; margin: 0;">
-                <strong>Technicienne Systèmes et Réseaux</strong>
-              </p>
-              
-              <a href="Image/cv.png" target="_blank" 
-                 style="text-decoration: none; 
-                        background: var(--accent); 
-                        color: #002b80; 
-                        padding: 8px 14px; 
-                        border-radius: 6px; 
-                        display: flex; 
-                        align-items: center; 
-                        gap: 8px; 
-                        font-weight: bold; 
-                        font-size: 14px; 
-                        transition: all 0.3s ease;
-                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
-                 onmouseover="this.style.opacity='0.85'; this.style.transform='translateY(-2px)'"
-                 onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
-                <span class="material-icons" style="font-size: 18px;">description</span>
-                VOIR MON CV
-              </a>
-            </div>
+            <h2 class="card-title"><span class="material-icons">person</span>Mon poste</h2>
+            <p style="font-size: 20px; margin-bottom:20px;"><strong>Technicienne Systèmes et Réseaux</strong></p>
+            <a href="Image/cv.png" target="_blank" style="text-decoration:none; background:var(--accent); color:#002b80; padding:10px; border-radius:6px; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">
+              <span class="material-icons">description</span>VOIR MON CV
+            </a>
           </article>
-          
-        </div>
-
-      </div>
-    </div>
-
-    <footer class="footer">
-      <span>Mia Mortier — BTS SIO 2025</span>
-      <span>NCI Solutions : Caen & Environs</span>
-    </footer>
-  </div>
-</section>
-
-<!-- ===================== SLIDE 5 — Rôles & Expertises métier ===================== -->
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
-  <div class="overlay">
-
-
-    <h1 class="title">05. Rôles & Expertises métier</h1>
-    <div class="content">
-      <div class="grid grid-2">
-
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">engineering</span>Ingénieur Production</h2>
-            <p style="font-size: 15px; margin:0;">Garant de la disponibilité des services. Il gère la mise en exploitation des serveurs et l'automatisation des tâches complexes.</p>
-          </div>
-
-          <div class="card">
-
-            <h2 class="card-title"><span class="material-icons">cloud_done</span>Admin. Microsoft</h2>
-            <p style="font-size: 15px; margin:0;">Expert des solutions Azure et M365. Il configure les annuaires (AD), les politiques de sécurité et les messageries.</p>
-
-          </div>
-
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">code</span>Développeur</h2>
-            <p style="font-size: 15px; margin:0;">Conçoit des applications sur-mesure ou des scripts d'interconnexion pour répondre aux besoins spécifiques des clients.</p>
-          </div>
-        </div>
-
-
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">headset_mic</span>Hotline & TSR</h2>
-            <p style="font-size: 15px; margin:0;">Assurent le support N1/N2. Résolution d'incidents, déploiement de postes et maintenance de proximité (mon pôle actuel).</p>
-          </div>
-
-          <div class="card">
-            <h2 class="card-title"><span class="material-icons">payments</span>Commercial</h2>
-            <p style="font-size: 15px; margin:0;">Analyse les besoins des entreprises pour proposer des contrats de services et des solutions d'infrastructure adaptées.</p>
-          </div>
-          <div class="card" style="background: rgba(178, 209, 255, 0.2); border: 2px solid var(--accent);">
-            <h2 class="card-title" style="color: white;"><span class="material-icons">sync_alt</span>Collaboration</h2>
-            <p style="font-size: 15px; margin:0;">Une interaction constante entre les pôles pour garantir un service client performant et sécurisé.</p>
-          </div>
         </div>
       </div>
-    </div>
-
-    <footer class="footer">
-      <span>Mia Mortier — Organisation de l'équipe</span>
-      <span>NCI Solutions</span>
-    </footer>
-
-  </div>
-
-</section>
-
-<!-- ===================== SLIDE 6 — Réalisations en entreprise ===================== -->
-
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
-  <div class="overlay">
-    <h1 class="title">06. Réalisations en entreprise</h1>
-    <div class="content">
-      <div class="grid grid-2" style="gap: 20px;">
-        
-        <div class="card">
-          <h2 class="card-title">Active Directory</h2>
-          <ul class="list">
-            <li><span class="material-icons">check</span> Gestion des GPO</li>
-            <li><span class="material-icons">check</span> Maintenance des identités</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title">Infrastructure</h2>
-          <ul class="list">
-            <li><span class="material-icons">check</span> Audit de baies de brassage</li>
-            <li><span class="material-icons">check</span> Déploiement matériel</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title">SAV & RMA</h2>
-          <ul class="list">
-            <li><span class="material-icons">settings_backup_restore</span> Gestion des retours constructeurs</li>
-            <li><span class="material-icons">check</span> Diagnostic et tests de composants</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title">Microsoft</h2>
-          <ul class="list">
-            <li><span class="material-icons">router</span> Les gestions des comptes et groupe sur les droits</li>
-            <li><span class="material-icons">check</span> Gestion des partages de fichiers et des sauvegardes</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- ===================== SLIDE 7 — Veille technologique ===================== -->
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
-  <div class="overlay">
-    <h1 class="title">07. Veille technologique & Juridique</h1>
-    
-    <div class="content">
-      <div class="grid grid-2" style="gap: 15px;">
-        
-        <article class="card">
-          <div class="card-header">
-            <span class="material-icons" style="color: var(--accent);">admin_panel_settings</span>
-            <h2 class="card-title" style="font-size: 1.1rem;">Infrastructures Réseau</h2>
-          </div>
-          <p style="font-size: 13px; color: var(--accent); font-weight: bold; margin-bottom: 5px;">
-           Comment renforcer la sécurité face aux ransomwares et DDoS ?
-          </p>
-          <p style="font-size: 13px; color: #e0e0e0; line-height: 1.3;">Étude des protections contre l'exfiltration et le chiffrement.</p>
-          <div style="margin-top: 8px; font-size: 12px; font-style: italic; opacity: 0.8;">Sources : ANSSI, CERT-FR, IT-Connect</div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <span class="material-icons" style="color: var(--accent);">cloud_sync</span>
-            <h2 class="card-title" style="font-size: 1.1rem;">Environnements Hybrides</h2>
-          </div>
-          <p style="font-size: 13px; color: var(--accent); font-weight: bold; margin-bottom: 5px;">
-           Comment sécuriser l'hybride tout en protégeant les données ?
-          </p>
-          <p style="font-size: 13px; color: #e0e0e0; line-height: 1.3;">Analyse des solutions AWS, Azure et des cadres CNIL.</p>
-          <div style="margin-top: 8px; font-size: 12px; font-style: italic; opacity: 0.8;">Sources : Blogs MS/AWS, ZDNet</div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <span class="material-icons" style="color: var(--accent);">layers</span>
-            <h2 class="card-title" style="font-size: 1.1rem;">Continuité de Service</h2>
-          </div>
-          <p style="font-size: 13px; color: var(--accent); font-weight: bold; margin-bottom: 5px;">
-           Comment assurer la haute disponibilité via la virtualisation ?
-          </p>
-          <p style="font-size: 13px; color: #e0e0e0; line-height: 1.3;">Veille sur VMware, Hyper-V et les sauvegardes immuables.</p>
-          <div style="margin-top: 8px; font-size: 12px; font-style: italic; opacity: 0.8;">Sources : Proxmox, LeMagIT, VMware</div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <span class="material-icons" style="color: var(--accent);">gavel</span>
-            <h2 class="card-title" style="font-size: 1.1rem;">Cadre Légal & RGPD</h2>
-          </div>
-          <p style="font-size: 13px; color: var(--accent); font-weight: bold; margin-bottom: 5px;">
-           Quelles obligations légales pour la sécurité des SI ?
-          </p>
-          <p style="font-size: 13px; color: #e0e0e0; line-height: 1.3;">Impact de la directive NIS2 et conformité RGPD.</p>
-          <div style="margin-top: 8px; font-size: 12px; font-style: italic; opacity: 0.8;">Sources : Légifrance, CNIL, ANSSI</div>
-        </article>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-  <!-- ===================== SLIDE 8 —  Domaines de Compétences ===================== -->
-
-
-<section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/008c69a00e35.jpg')">
-  <div class="overlay">
-    <h1 class="title">04. Domaines de Compétences (E5)</h1>
-    <div class="content">
-      <div class="card" style="max-width: 800px; margin: 0 auto; padding: 25px;">
-        <h2 class="card-title" style="text-align: center; color: #0056b3; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-          Référentiel de Compétences
-        </h2>
-        
-        <ul style="list-style: none; padding: 0; margin-top: 20px;">
-          <li style="margin-bottom: 12px; display: flex; align-items: center;">
-            <span style="background: #0056b3; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold;">1</span>
-            <strong>Gestion du patrimoine informatique</strong>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; align-items: center;">
-            <span style="background: #0056b3; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold;">2</span>
-            <strong>Réponse aux incidents et demandes d'assistance</strong>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; align-items: center;">
-            <span style="background: #0056b3; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold;">3</span>
-            <strong>Développement de la présence en ligne</strong>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; align-items: center;">
-            <span style="background: #0056b3; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold;">4</span>
-            <strong>Travail en mode projet</strong>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; align-items: center;">
-            <span style="background: #0056b3; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold;">5</span>
-            <strong>Mise à disposition d'un service informatique</strong>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; align-items: center;">
-            <span style="background: #0056b3; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold;">6</span>
-            <strong>Organisation de son développement professionnel</strong>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-  
-
-<!-- ===================== SLIDE 8 — Bilan et perspectives ===================== -->
-<section class="slide" style="background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');">
-    <div class="overlay">
-        <h1 class="title">08. Bilan et perspectives</h1>
-        <div class="content">
-            <div class="grid grid-2">
-                <div class="card">
-                    <div style="display:flex; align-items:center; margin-bottom:15px;">
-                        <div class="card-icon-alt"><i class="material-icons">school</i></div>
-                        <h2 style="font-size:24px; color:#a3c2ff;">Bilan de formation</h2>
-                    </div>
-                    <ul class="list">
-                        <li><i class="material-icons">verified</i> <div><strong>Acquis</strong> : Systèmes & Réseaux</div></li>
-                        <li><i class="material-icons">verified</i> <div><strong>Certifs</strong> : CCNA & ANSSI</div></li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div style="display:flex; align-items:center; margin-bottom:15px;">
-                        <div class="card-icon-alt"><i class="material-icons">trending_up</i></div>
-                        <h2 style="font-size:24px; color:#a3c2ff;">Perspectives</h2>
-                    </div>
-                    <ul class="list">
-                        <li><i class="material-icons">computer</i> <div>Admin. Systèmes & Réseaux</div></li>
-                        <li><i class="material-icons">shield</i> <div>Expert Cybersécurité</div></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <footer class="footer">
-            <span><strong>Mia Mortier</strong> — BTS SIO 2025</span>
-            <span>Présentation de fin de cycle</span>
-        </footer>
     </div>
   </section>
 
+        <!-- ===================== SLIDE -6 — Présentation personnelle ===================== -->
+
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+    <div class="overlay">
+      <h1 class="title">06. Réalisations en entreprise</h1>
+      <div class="content">
+        <div class="grid grid-2">
+          <div class="card"><h2 class="card-title">Active Directory</h2><ul class="list"><li>GPO & Identités</li></ul></div>
+          <div class="card"><h2 class="card-title">Infrastructure</h2><ul class="list"><li>Audit de baies</li></ul></div>
+          <div class="card"><h2 class="card-title">SAV & RMA</h2><ul class="list"><li>Retours constructeurs</li></ul></div>
+          <div class="card"><h2 class="card-title">Microsoft 365</h2><ul class="list"><li>Partages & Droits</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        <!-- ===================== SLIDE -7 — Présentation personnelle ===================== -->
+
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+    <div class="overlay">
+      <h1 class="title">07. Veille technologique</h1>
+      <div class="content">
+        <div class="grid grid-2">
+          <div class="card"><h3 style="color:var(--accent)">Cyber / Ransomware</h3><p style="font-size:14px">Stratégie 3-2-1-1-0</p></div>
+          <div class="card"><h3 style="color:var(--accent)">Cloud Hybride</h3><p style="font-size:14px">Azure & Sécurité</p></div>
+          <div class="card"><h3 style="color:var(--accent)">Virtualisation</h3><p style="font-size:14px">Haute disponibilité</p></div>
+          <div class="card"><h3 style="color:var(--accent)">Juridique</h3><p style="font-size:14px">RGPD & NIS2</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        <!-- ===================== SLIDE -8 — Présentation personnelle ===================== -->
+
+  <section class="slide" style="background-image:url('https://sfile.chatglm.cn/images-ppt/00955c6e533c.jpg')">
+    <div class="overlay">
+      <h1 class="title">08. Tableau de Synthèse</h1>
+      <div class="content">
+        <div class="card" style="width: 100%;">
+          <table>
+            <thead>
+              <tr>
+                <th>Réalisations</th>
+                <th>Support</th>
+                <th>Infra</th>
+                <th>Cyber</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Active Directory</td><td>✅</td><td></td><td>✅</td></tr>
+              <tr><td>Audit Baies</td><td></td><td>✅</td><td></td></tr>
+              <tr><td>RMA Matériel</td><td>✅</td><td></td><td></td></tr>
+              <tr><td>VLAN / Réseau</td><td></td><td>✅</td><td>✅</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" style="background-image: url('https://sfile.chatglm.cn/images-ppt/79a35c36e84e.jpg');">
+    <div class="overlay">
+      <h1 class="title">09. Bilan & Perspectives</h1>
+      <div class="content">
+        <div class="grid grid-2">
+          <div class="card"><h2 class="card-title">Acquis</h2><p>Expertise Systèmes & Réseaux</p></div>
+          <div class="card"><h2 class="card-title">Futur</h2><p>Administratrice SI / Cybersécurité</p></div>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>Mia Mortier — BTS SIO 2025</span>
+        <span>Merci de votre attention</span>
+      </footer>
+    </div>
+  </section>
 </main>
 
 <script>
   const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
   const counter = document.getElementById('counter');
-  let current = 0;
+  let currentSlide = 0;
 
-  function show(idx) {
-    slides.forEach(s => s.classList.remove('is-active'));
-    slides[idx].classList.add('is-active');
-    counter.innerText = `Slide ${idx + 1} / ${slides.length}`;
+  function updateSlide() {
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('is-active', index === currentSlide);
+    });
+    counter.innerText = `Slide ${currentSlide + 1} / ${slides.length}`;
   }
 
-  document.getElementById('nextBtn').onclick = () => { if(current < slides.length-1){ current++; show(current); } };
-  document.getElementById('prevBtn').onclick = () => { if(current > 0){ current--; show(current); } };
-  
-  window.onkeydown = (e) => { 
-    if(e.key === "ArrowRight" || e.key === " ") document.getElementById('nextBtn').click();
-    if(e.key === "ArrowLeft") document.getElementById('prevBtn').click();
-  };
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) { currentSlide--; updateSlide(); }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
 </script>
 
 </body>
